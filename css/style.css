@@ -14,7 +14,7 @@ Base CSS =======================================================
   --text-size-md: 1rem;
   --text-size-lg: 1.2rem;
   --text-size-xlg: 1.6rem;
-  --text-size-title: 2.5rem;
+  --text-size-title: 3rem;
   /* Others */
   --wave-height: 20px;
   --screen-side-padding: 2rem;
@@ -217,6 +217,8 @@ span.inline-block {
   /* Ensure hero-text is above waves-background */
   .hero-text {
     position: relative;
+    max-width: 1000px;
+    margin: auto;
     z-index: 2;
   }
 
@@ -416,7 +418,7 @@ p.center-text {
 
   .four-key-areas {
     display: grid;
-    max-width: 1200px;
+    max-width: 1000px;
     align-self: center;
     margin-left: auto;
     margin-right: auto;
@@ -524,10 +526,11 @@ button {
   text-align: left;
   background: var(--color-sand-light);
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-  margin-top: 0.5rem;
+  margin: 1rem auto 0;
   border-radius: 0.5rem;
   /* Hidden for border radius */
   overflow: hidden;
+  max-width: 1000px;
 
   .accordion-question {
     position: relative;
