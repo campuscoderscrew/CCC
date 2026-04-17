@@ -18,26 +18,35 @@ export default function AccordionItem(props: Props) {
         first:[&>button]:rounded-t-xl 
         last:[&>button]:rounded-b-xl last:[&>div]:rounded-b-xl"
     >
+      {/* Panel toggle */}
       <button
         onClick={() => handleToggle(id)}
         className="group p-4 flex items-center font-bold cursor-pointer
           transition duration-300 hover:bg-ocean-light"
       >
-        <ShipWheel
-          className={`mr-1 fill-ocean-dark size-6 
-            transition-all ease-in-out group-hover:fill-sky-light 
-            ${isOpen} rotate-180`}
-        />
+        <div
+          className={`mr-1 size-6 transition duration-1000 ease-in-out
+            ${isOpen ? "rotate-180" : "rotate-0"}`}
+        >
+          <ShipWheel className="fill-ocean-dark group-hover:fill-sky-light" />
+        </div>
         <span className="group-hover:text-sky-light">{title}</span>
       </button>
-      {isOpen && (
-        <div
-          className="p-4 bg-white overflow-hidden 
-          transition-all duration-300 discrete"
+
+      {/* Panel content */}
+
+      <div
+        className={`bg-white overflow-hidden 
+          transition-all ease-in-out
+          ${isOpen ? "max-h-screen duration-500" : "max-h-0 duration-300"}`}
+      >
+        <p
+          className={`m-4 transition 
+            ${isOpen ? "duration-300 translate-y-0" : "duration-1000 -translate-y-2"}`}
         >
-          <p className="">{children}</p>
-        </div>
-      )}
+          {children}
+        </p>
+      </div>
     </div>
   );
 }

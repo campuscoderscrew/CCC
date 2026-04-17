@@ -29,7 +29,7 @@ export default function FAQ() {
       Development teams are formed by our Human Resources (HR) committee. HR
       considers members` proficiencies and availability to match them to the
       appropriate team so that members are put in a development environment that
-      has the appropriate pace. Can I choose a team?
+      has the appropriate pace.
     </p>,
     <p>
       To ensure members are spread evenly across our teams, members cannot
