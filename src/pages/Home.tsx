@@ -11,13 +11,13 @@ import Footer from "../components/Footer";
 
 export default function Home() {
   return (
-    <div className="relative flex flex-col gap-4">
+    <div className="relative flex flex-col">
       <Navbar />
       <Hero />
       <Events />
       <WebApply />
 
-      <div className="py-4 flex flex-col gap-8 bg-linear-to-b from-sky-light to-sky-dark">
+      <div className="py-4 space-y-8 bg-linear-to-b from-sky-light to-sky-dark">
         <Join />
         <FAQ />
         <Contact />

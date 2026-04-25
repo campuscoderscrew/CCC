@@ -16,11 +16,12 @@ export default function Join() {
         className="flex gap-4 text-sm text-sand-light font-bold
         *:px-4 *:py-2 *:bg-ocean-dark *:rounded-lg *:cursor-pointer
         *:transition-color *:duration-300 *:ease-in
-        *:hover:text-ocean-dark *:hover:bg-sand-light
-        "
+        *:hover:text-ocean-dark *:hover:bg-sand-light"
       >
         <a href="https://go.umd.edu/ccc-developer-interest">Be a Developer</a>
-        <a href="https://go.umd.edu/ccc-committees-interest">Join a Committee</a>
+        <a href="https://go.umd.edu/ccc-committees-interest">
+          Join a Committee
+        </a>
       </div>
     </div>
   );

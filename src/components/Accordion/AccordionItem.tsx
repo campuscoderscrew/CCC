@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { useState, useRef, useEffect } from "react";
 
 type Props = {
   title: string;
@@ -11,6 +12,16 @@ type Props = {
 
 export default function AccordionItem(props: Props) {
   const { title, children, id, isOpen, handleToggle } = props;
+
+  // For precise accordion opening
+  const [panelHeight, setPanelHeight] = useState<number>(0);
+  const panelRef = useRef<HTMLDivElement>(null);
+  const panelMaxHeight = { maxHeight: isOpen ? panelHeight : 0 };
+
+  useEffect(() => {
+    const height = panelRef.current?.offsetHeight;
+    height && setPanelHeight(height);
+  }, []);
 
   return (
     <div
@@ -36,16 +47,13 @@ export default function AccordionItem(props: Props) {
       {/* Panel content */}
 
       <div
+        ref={panelRef}
+        style={panelRef.current ? panelMaxHeight : {}}
         className={`bg-white overflow-hidden 
           transition-all ease-in-out
-          ${isOpen ? "max-h-screen duration-500" : "max-h-0 duration-300"}`}
+          ${isOpen ? "duration-500" : "duration-300"}`}
       >
-        <p
-          className={`m-4 transition 
-            ${isOpen ? "duration-300 translate-y-0" : "duration-1000 -translate-y-2"}`}
-        >
-          {children}
-        </p>
+        <div className="m-4">{children}</div>
       </div>
     </div>
   );
