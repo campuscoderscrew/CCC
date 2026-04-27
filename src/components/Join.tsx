@@ -3,7 +3,7 @@ import React from "react";
 // want to join, dev button, committee button
 export default function Join() {
   return (
-    <div
+    <div id="join-us"  
       className="px-4 flex flex-col items-center 
         text-base text-center text-ocean-dark"
     >

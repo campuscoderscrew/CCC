@@ -8,7 +8,7 @@ export default function Events() {
 
   return (
     <>
-      <div
+      <div id="events"  
         className="p-8 flex flex-col gap-4 items-center bg-sand-dark 
         text-base text-ocean-dark "
       >
