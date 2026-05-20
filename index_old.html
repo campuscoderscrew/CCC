@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campus Coders Crew</title>
+
+    <!-- Font: Inter -->
+    <link rel="preload" href="./fonts/InterVariable.woff2" as="font" crossorigin="" type="font/woff2">
+    <link rel="stylesheet" href="./fonts/inter.css" />
+
+    <!-- Main CSS Styles and Theme JS-->
+    <link rel="preload" href="./css/style.css" as="style">
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preload" href="./css/toggles.css" as="style">
+    <link rel="stylesheet" href="./css/toggles.css">
+    <link rel="preload" href="./css/svg.css" as="style">
+    <link rel="stylesheet" href="./css/svg.css">
+
+    <!-- Optional Animation CSS (Disable in Development) -->
+    <link rel="preload" href="./css/waves.css" as="style">
+    <link rel="stylesheet" href="./css/waves.css" />
+
+    <!-- Javascript only for accessibility -->
+    <script defer src="./js/script.js"></script>
+</head>
+
+<body>
+    <header class="menu-wrapper">
+        <div class="navBar side-padding">
+            <a href="./">
+                <img src="./assets/logo.png" alt="Campus Coders Crew Logo" class="logo" height="32px" width="32px">
+                Campus Coders Crew
+            </a>
+            <!-- Menu Toggle Checkbox -->
+            <label class="switch" title="Menu Toggle" id="toggle-menu-label">
+                <input type="checkbox" id="toggle-menu">
+                <div class="icon-wrapper">
+                    <svg id="menu-open" class="unchecked" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24">
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <svg id="menu-close" class="checked" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24">
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"
+                            d="M6 18L18 6m0 12L6 6" />
+                    </svg>
+                </div>
+            </label>
+        </div>
+        <nav class="navMenu">
+            <a href="#events">Events</a>
+
+            <a href="#request-website">Project Requests</a>
+            <a href="#join-us">Join</a>
+
+            
+            <!--<a href="./archive.html">Archive</a>-->
+        </nav>
+    </header>
+    <main>
+        <section class="hero-section">
+            <div class="hero-text side-padding">
+                <label id="hero-subheading">By Students, For Students</label>
+                <h1>Campus <span class="inline-block">Coders Crew </span></h1>
+                <p>
+                    Empowering students to collaborate, innovate, and grow. Join our community of developers and build
+                    websites for various campus groups.
+                </p>
+            </div>
+            <div class="waves-background">
+                <!-- add sailboat from assets/waves-sailboat.svg behind waves -->
+                <svg id="sailboat" width="360" height="413" viewBox="0 0 360 413" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M171.823 2.97805C186.322 11.0882 256.862 342.996 256.862 342.996L31.2578 330.163C31.2578 330.163 165.14 1.43793 171.823 2.97805Z"
+                        fill="#A4D6E1" />
+                    <path
+                        d="M171.823 2.97805C186.322 11.0882 256.862 342.996 256.862 342.996L31.2578 330.163C31.2578 330.163 165.14 1.43793 171.823 2.97805Z"
+                        fill="#D3E1E1" />
+                    <path d="M113.212 253.782L167.196 337.895L31.2578 330.163L113.212 253.782Z" fill="#A4D6E1" />
+                    <path
+                        d="M175.632 8.05469C176.401 8.51771 177.561 9.28253 179.101 10.4805C182.18 12.8768 186.777 17.0056 192.807 23.915C204.865 37.7334 222.641 62.6644 245.452 107.082C259.726 140.768 275.423 197.136 287.556 245.113C293.621 269.1 298.794 290.979 302.45 306.862C304.278 314.804 305.727 321.246 306.719 325.702C307.215 327.93 307.597 329.662 307.854 330.837C307.982 331.417 308.078 331.862 308.144 332.163C308.116 332.17 308.088 332.179 308.058 332.187C307.697 332.281 307.159 332.42 306.454 332.593C305.044 332.938 302.963 333.421 300.288 333.973C294.938 335.075 287.209 336.449 277.701 337.531C258.738 339.69 232.711 340.689 204.379 336.072C201.327 330.372 198.565 321.058 196.08 309.061C193.566 296.925 191.344 282.091 189.381 265.573C185.455 232.538 182.57 192.793 180.47 154.479C178.369 116.166 177.052 79.2892 176.261 51.9902C175.865 38.3411 175.6 27.0862 175.435 19.2441C175.352 15.3231 175.294 12.2545 175.257 10.167C175.238 9.13964 175.225 8.34976 175.216 7.8125C175.339 7.88208 175.478 7.96193 175.632 8.05469ZM167.651 13.7969C167.341 18.0071 166.897 24.0925 166.36 31.5918C165.287 46.5904 163.844 67.2469 162.363 89.877C159.402 135.133 156.291 188.298 155.693 219.893C155.096 251.508 157.927 280.718 160.906 302.021C162.396 312.674 163.923 321.352 165.078 327.367C165.656 330.375 166.14 332.717 166.48 334.309C166.616 334.944 166.731 335.46 166.817 335.851C166.627 335.783 166.405 335.704 166.154 335.616C165.161 335.27 163.704 334.775 161.843 334.179C158.121 332.986 152.786 331.39 146.328 329.768C133.415 326.524 115.998 323.179 98.0039 322.783C80.0239 322.388 63.3101 324.111 51.0938 325.932C44.9849 326.842 39.9984 327.778 36.5381 328.486C34.808 328.84 33.4589 329.138 32.542 329.347C32.3521 329.39 32.1807 329.429 32.0283 329.465C32.0963 329.269 32.1763 329.042 32.2666 328.782C32.6189 327.77 33.1388 326.278 33.8096 324.356C35.1511 320.514 37.0964 314.955 39.5088 308.092C44.3336 294.364 51.0294 275.415 58.5137 254.532C73.4833 212.763 91.6037 163.263 104.215 132.314C116.82 101.381 133.029 70.1912 146.092 46.7305C152.622 35.0013 158.365 25.206 162.475 18.3438C164.529 14.9126 166.176 12.2147 167.309 10.375C167.56 9.96735 167.786 9.6023 167.985 9.28027C167.904 10.3747 167.791 11.8944 167.651 13.7969Z"
+                        fill="#FCFAF0" stroke="#FAF7EC" />
+                    <path
+                        d="M168.62 3.06371C168.632 1.3683 170.009 0 171.705 0C173.417 0 174.801 1.39396 174.789 3.10582L172.261 373.502C172.249 375.197 170.872 376.566 169.176 376.566C167.464 376.566 166.08 375.172 166.092 373.46L168.62 3.06371Z"
+                        fill="#FCFAF0" />
+                    <path
+                        d="M356.49 295.945C357.665 295.714 358.579 296.837 358.112 297.94C354.306 306.948 343.419 332.484 331.949 357.29C326.214 369.694 320.335 381.91 315.124 391.784C312.518 396.721 310.082 401.068 307.917 404.558C305.814 407.946 303.983 410.496 302.515 411.998H22.8281C22.254 411.998 21.514 411.658 20.6162 410.905C19.7328 410.164 18.7645 409.081 17.7412 407.731C15.6959 405.033 13.4813 401.338 11.3379 397.375C7.05345 389.453 3.08828 380.529 1.36426 376.54C0.995971 375.688 1.44065 374.773 2.31738 374.557C18.0988 370.656 115.34 346.691 179.337 332.499C241.706 318.668 336.882 299.813 356.49 295.945Z"
+                        fill="url(#paint0_radial_6471_564)" stroke="#013253" />
+                    <defs>
+                        <radialGradient id="paint0_radial_6471_564" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                            gradientTransform="translate(360.103 294.641) rotate(160.701) scale(360.951 125.983)">
+                            <stop stop-color="#00325A" />
+                            <stop offset="1" stop-color="#014476" />
+                        </radialGradient>
+                    </defs>
+                </svg>
+
+                <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                    <defs>
+                        <path id="gentle-wave"
+                            d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                    </defs>
+                    <g class="wave-parallax">
+                        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(from currentColor r g b / 0.6)" />
+                        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(from currentColor r g b / 0.4)" />
+                        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(from currentColor r g b / 0.2)" />
+                        <use xlink:href="#gentle-wave" x="48" y="7" fill="currentColor" />
+                    </g>
+                </svg>
+            </div>
+        </section>
+        <section id="about" class="side-padding">
+            <img src="./assets/logo.png" alt="Campus Coders Crew Logo" class="logo" height="64px" width="64px">
+            <h2>Who are we?</h2>
+            <p class="center-text">
+                We are a group of students interested in hands on experience in software engineering.
+                Our club takes students out of the typical classroom setting and into a
+                community of thinkers, builders, and dreamers.
+            </p>
+            <div class="goals flex-center-row">
+                <div>
+                    <span class="goals--learning"></span>
+                    <h3>Learning</h3>
+                </div>
+                <div>
+                    <span class="goals--service"></span>
+                    <h3>Service</h3>
+                </div>
+                <div>
+                    <span class="goals--opportunity"></span>
+                    <h3>Opportunity</h3>
+                </div>
+            </div>
+        </section>
+        <svg class="curved-svg-divider" width="600" height="30" viewBox="0 0 600 30" fill="none"
+            xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <rect width="100%" height="100%" fill="var(--color-ocean-light)" />
+            <path
+                d="M600 2.96986V11.6009V29.9976H0V11.6009C42.8364 11.4173 135.33 22.1338 290.592 9.98004C445.855 -2.1737 554.44 -1.51879 600 2.96986Z"
+                fill="#085A91" />
+            <path
+                d="M600 14.1388V24.293V29.9975H0V24.293C42.8364 24.077 135.33 36.6846 290.592 22.3861C445.855 8.08758 554.44 8.85806 600 14.1388Z"
+                fill="#F5EED6" />
+        </svg>
+        <section id="events" class="side-padding">
+            <h2>Upcoming Events</h2>
+            <p class="center-text">
+                We hold general body meetings every week, development teams standups, and committee meetings every week. Feel free to drop in for a meeting (please email us for meeting links) or reach out to us!</span>
+            </p>
+            <!--
+            <div class="events-list">
+                <div class="event-card">
+                    <div class="date">
+                        <p class="month">May</p>
+                        <p class="day">1</p>
+                    </div>
+                    <div>
+                        <p class="title">General Body Meeting</p>
+                        <p class="time">5:00 PM</p>
+                        <p class="location">Student Union Room 123</p>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <div class="date">
+                        <p class="month">May</p>
+                        <p class="day">2</p>
+                    </div>
+                    <div>
+                        <p class="title">General Body Meeting</p>
+                        <p class="time">5:00 PM</p>
+                        <p class="location">Student Union Room 123</p>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <div class="date">
+                        <p class="month">May</p>
+                        <p class="day">3</p>
+                    </div>
+                    <div>
+                        <p class="title">General Body Meeting</p>
+                        <p class="time">5:00 PM</p>
+                        <p class="location">Student Union Room 123</p>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <div class="date">
+                        <p class="month">May</p>
+                        <p class="day">4</p>
+                    </div>
+                    <div>
+                        <p class="title">General Body Meeting</p>
+                        <p class="time">5:00 PM</p>
+                        <p class="location">Student Union Room 123</p>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <div class="date">
+                        <p class="month">May</p>
+                        <p class="day">5</p>
+                    </div>
+                    <div>
+                        <p class="title">General Body Meeting</p>
+                        <p class="time">5:00 PM</p>
+                        <p class="location">Student Union Room 123</p>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <div class="date">
+                        <p class="month">May</p>
+                        <p class="day">6</p>
+                    </div>
+                    <div>
+                        <p class="title">General Body Meeting</p>
+                        <p class="time">5:00 PM</p>
+                        <p class="location">Student Union Room 123</p>
+                    </div>
+                </div>
+            </div>
+            -->
+            <iframe src="https://calendar.google.com/calendar/embed?src=a0b185ca42bd1505d33e1843cdd0ddfc2464e5668087ad5999abd39d04c0fac0%40group.calendar.google.com&ctz=America%2FNew_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+        </section>
+        <svg class="curved-svg-divider" width="600" height="30" viewBox="0 0 600 30" fill="none"
+            xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <rect width="100%" height="100%" fill="var(--color-sand-light)" />
+            <path
+                d="M0 27.0282V18.3972V0.0004673H600V18.3972C557.164 18.5807 464.67 7.86426 309.408 20.018C154.145 32.1717 45.56 31.5168 0 27.0282Z"
+                fill="#F9F3DC" />
+            <path
+                d="M0 15.8592V5.70506V0.00053215H600V5.70506C557.164 5.92103 464.67 -6.68657 309.408 7.61195C154.145 21.9105 45.56 21.14 0 15.8592Z"
+                fill="#F5EED6" />
+        </svg>
+        <section id="request-website" class="side-padding">
+            <h2 class="center-text">Apply For a Website</h2>
+            <div class="four-key-areas">
+                <div class="div1">
+                    <h3>Eligibility</h3>
+                    <p>All UMD students and clubs can request a website! Not from UMD? Feel free to email us for follow
+                        up details.
+                    </p>
+                </div>
+                <div class="div2">
+                    <h3>Process</h3>
+                    <p>All requests will be fulfilled! If no teams are currently available, you’ll be placed on a
+                        waitlist.
+                    </p>
+                </div>
+                <div class="div3">
+                    <h3>Timeline</h3>
+                    <p>Placement depends on team availability and demand. All respondents will be kept up to date with
+                        the
+                        status of their application.</p>
+                </div>
+                <div class="div4">
+                    <h3>Cost</h3>
+                    <p>Our base plan is free. For back end and server-side applications, pricing will adjust
+                        accordingly.
+                    </p>
+                </div>
+                <div class="div5">
+                    <h3>Want a Website?</h3>
+                    <p>Please fill out the form below, and we’ll reach out!</p>
+                    <!-- link to form -->
+                    <a href="https://go.umd.edu/CCC-website-request">
+                        <button title="Google Form to Request Website">Request Form</button>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <svg class="curved-svg-divider" width="600" height="30" viewBox="0 0 600 30" fill="none"
+            xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <rect width="100%" height="100%" fill="var(--color-sky-light)" />
+            <path
+                d="M0 27.0282V18.3972V0.0004673H600V18.3972C557.164 18.5807 464.67 7.86426 309.408 20.018C154.145 32.1717 45.56 31.5168 0 27.0282Z"
+                fill="hsl(47, 90%, 93%)" />
+            <path
+                d="M0 15.8592V5.70506V0.00053215H600V5.70506C557.164 5.92103 464.67 -6.68657 309.408 7.61195C154.145 21.9105 45.56 21.14 0 15.8592Z"
+                fill="hsl(47, 80%, 95%)" />
+        </svg>
+        <section id="join-us" class="side-padding center-text">
+            <h2>Want to Join?</h2>
+            <p>If you’re interested in becoming part of Campus Coders Crew, please fill out the form(s) below!</p>
+
+            <a href="https://go.umd.edu/ccc-developer-interest" target="_blank">
+                <button title="Google Form for Developer" >Be a Developer</button>
+            </a>
+            <a href="https://go.umd.edu/ccc-committees-interest" target="_blank">
+                <button title="Google Form for Committee">Join a Committee</button>
+            </a>
+            <br>
+            <br>
+            <h3>Frequently Asked Questions</h3>
+            <!-- accordion question section -->
+            <div class="accordion-section">
+                <input type="radio" name="accordion" id="acc1" hidden>
+                <label class="accordion-question" for="acc1">Who can join?</label>
+                <div class="accordion-answer">
+                    <p>
+                        Anyone can join! In addition to our development team, we also have Committees that allow members
+                        to gain experience with non-technical components that facilitate club functions. These
+                        committees
+                        include Marketing, Logistics, Human Resources, Quality Assurance, and more!
+                    </p>
+                </div>
+
+                <input type="radio" name="accordion" id="acc2" hidden>
+                <label class="accordion-question" for="acc2">What skill level do I need?</label>
+                <div class="accordion-answer">
+                    <p>
+                        Anyone can join! In addition to our development team, we also have Committees that allow members
+                        to gain experience with
+                        non-technical components that facilitate club functions. These committees include Marketing,
+                        Logistics, Human Resources,
+                        Quality Assurance, and more!
+                    </p>
+                </div>
+
+                <input type="radio" name="accordion" id="acc3" hidden>
+                <label class="accordion-question" for="acc3">How are development teams formed?</label>
+                <div class="accordion-answer">
+                    <p>
+                        Development teams are formed by our Human Resources (HR) committee. HR considers members’
+                        proficiencies and availability
+                        to match them to the appropriate team so that members are put in a development environment that
+                        has the appropriate
+                        pace. Can I choose a team?
+                    </p>
+                </div>
+
+                <input type="radio" name="accordion" id="acc4" hidden>
+                <label class="accordion-question" for="acc4">Can I choose a team?</label>
+                <div class="accordion-answer">
+                    <p>
+                        To ensure members are spread evenly across our teams, members cannot determine what team they
+                        are assigned to. However,
+                        if certain members wish to be on the same team, we will try to accommodate as much as possible.
+                        Additionally, while
+                        members cannot change their primary team, they can temporarily join multiple teams at once. For
+                        temporary assignments,
+                        members can choose where they are assigned to.
+                    </p>
+                </div>
+
+                <input type="radio" name="accordion" id="acc5" hidden>
+                <label class="accordion-question" for="acc5">What are the chances of being accepted?</label>
+                <div class="accordion-answer">
+                    <p>
+                        CCC is non-selective, meaning that everyone is accepted into our club. While Committees and
+                        Development Pods are
+                        non-selective, Development Teams screen members to ensure they have the appropriate skill level.
+                        However, we do not have
+                        a cap on our amount of developers, and we will accept all qualified candidates into Development
+                        Teams.
+                    </p>
+                </div>
+
+                <input type="radio" name="accordion" id="acc6" hidden>
+                <label class="accordion-question" for="acc6">Is there a time commitment expected?</label>
+                <div class="accordion-answer">
+                    <p>
+                        We do not have a defined time commitment across the board; however, members should set down
+                        expectations with their Team
+                        Lead/Committee Heads. Members are expected to notify Human Resources when they need to take a
+                        break from the club or
+                        will be unavailable for certain times. Members are also expected to respond to communication
+                        within 72 hours. Some
+                        members spend 30 minutes per week on the club while others spend 10+. So long as members explain
+                        how involved they wish
+                        to be and follow through with whatever time commitment they indicate, they may be a club member.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section id="contact-us" class="side-padding center-text">
+            <h2>Contact Us</h2>
+            <p>
+                Have any questions? Reach out to us at <br> <a
+                    href="mailto:campuscoderscrew@gmail.com">campuscoderscrew@gmail.com</a>
+            </p>
+            <div class="socials">
+                <a href="https://www.instagram.com/umdccc/">
+                    <svg class="socials--instagram">
+                        <title>Instagram</title>
+                    </svg>
+                </a>
+                <a href="https://go.umd.edu/ccc-join-discord">
+                    <svg class="socials--discord">
+                        <title>Discord</title>
+                    </svg>
+                </a>
+                <a href="https://github.com/campuscoderscrew">
+                    <svg class="socials--github">
+                        <title>GitHub</title>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/company/campus-coders-crew">
+                    <svg class="socials--linkedin">
+                        <title>LinkedIn</title>
+                    </svg>
+                </a>
+            </div>
+        </section>
+    </main>
+    <footer class="side-padding center-text">
+        <p>Copyright &copy; 2025 | Campus Coders Crew</p>
+    </footer>
+    <script src="./js/theme.js"></script>
+</body>
+
+</html>
