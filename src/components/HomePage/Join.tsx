@@ -1,6 +1,4 @@
-import React from "react";
-
-// want to join, dev button, committee button
+// Want to join, dev button, committee button
 export default function Join() {
   return (
     <div id="join-us"  

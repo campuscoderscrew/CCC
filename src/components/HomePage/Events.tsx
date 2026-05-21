@@ -1,6 +1,4 @@
-import React from "react";
-
-// event google calendar
+// Event google calendar
 export default function Events() {
   // Do not format string across multiple lines. Google API does not recognize
   // split string.

@@ -1,7 +1,7 @@
-import React, {useState} from "react"
-import logo from '../../assets/logo.png'
+import {useState} from "react"
+import logo from '@assets/logo.png'
 
-// logo, nav links (Events, Project Requests, Join) 
+// ogo, nav links (Events, Project Requests, Join) 
 export default function HeroNavbar() {
     const [menuOpen, setMenuOpen] = useState(false)
 

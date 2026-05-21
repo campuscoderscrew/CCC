@@ -1,4 +1,4 @@
-import React from "react";
+import sharkCircle from "@assets/shark-circle.png";
 
 // (Eligibility, process, timeline, cost), form button
 export default function WebApply() {
@@ -66,7 +66,7 @@ export default function WebApply() {
 
           <img
             className="-z-1 absolute w-4/5 place-self-center animate-slow-spin"
-            src="assets/shark-circle.png"
+            src={sharkCircle}
           />
         </div>
       </div>

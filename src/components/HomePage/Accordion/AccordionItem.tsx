@@ -45,7 +45,6 @@ export default function AccordionItem(props: Props) {
       </button>
 
       {/* Panel content */}
-
       <div
         ref={panelRef}
         style={panelRef.current ? panelMaxHeight : {}}

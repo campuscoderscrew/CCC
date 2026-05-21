@@ -1,6 +1,7 @@
-import React, { useState } from "react"
-import { Link, NavLink } from "react-router-dom"
-import logo from '../../assets/logo.png'
+import { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+
+import logo from "@assets/logo.png";
 
 const navLinks = [
   { label: "Home", to: "/home" },
@@ -8,16 +9,16 @@ const navLinks = [
   { label: "Events", to: "/events" },
   { label: "Crew", to: "/crew" },
   { label: "Projects", to: "/projects" },
-]
+];
 
 export default function NavBar() {
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const linkClass =
-    "font-bold no-underline px-4 py-4 text-[hsl(204,98%,15%)] hover:bg-[hsl(195,80%,90%)] transition-colors"
+    "font-bold no-underline px-4 py-4 text-[hsl(204,98%,15%)] hover:bg-[hsl(195,80%,90%)] transition-colors";
 
   const activeLinkClass = ({ isActive }: { isActive: boolean }) =>
-    `${linkClass} ${isActive ? "underline underline-offset-4" : ""}`
+    `${linkClass} ${isActive ? "underline underline-offset-4" : ""}`;
 
   return (
     <div>
@@ -52,13 +53,22 @@ export default function NavBar() {
         >
           {menuOpen ? (
             <svg
-              style={{ transition: "transform 0.5s ease", transform: "rotate(360deg)" }}
+              style={{
+                transition: "transform 0.5s ease",
+                transform: "rotate(360deg)",
+              }}
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
               viewBox="0 0 24 24"
             >
-              <path fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="2" d="M6 18L18 6m0 12L6 6" />
+              <path
+                fill="none"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeWidth="2"
+                d="M6 18L18 6m0 12L6 6"
+              />
             </svg>
           ) : (
             <svg
@@ -68,7 +78,14 @@ export default function NavBar() {
               height="24"
               viewBox="0 0 24 24"
             >
-              <path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+              <path
+                fill="none"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
             </svg>
           )}
         </button>
@@ -108,5 +125,5 @@ export default function NavBar() {
         </div>
       )}
     </div>
-  )
+  );
 }
