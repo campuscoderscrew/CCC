@@ -10,7 +10,7 @@ import Join from "../components/HomePage/Join";
 import FAQ from "../components/HomePage/FAQ";
 import Contact from "../components/HomePage/Contact";
 import Footer from "../components/HomePage/Footer";
-import NavBar from "../components/NavBar";
+import NavBar from "../components/Navbar";
 
 export default function Home() {
   return (
