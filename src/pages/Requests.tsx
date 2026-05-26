@@ -71,12 +71,11 @@ export default function Requests() {
 
       {/* "Apply for a Website" Section */}
       <div
-        className="mx-8 md:mx-16 lg:mx-32 flex flex-col items-center 
-          font-sans text-ocean-dark
-          [&_h1]:font-semibold [&_h2]:font-semibold [&_h3]:font-semibold
-          "
+        className="mx-8 md:mx-16 lg:mx-32 mt-16 
+          flex flex-col gap-16 items-center font-sans text-ocean-dark
+          [&_h1]:font-semibold [&_h2]:font-semibold [&_h3]:font-semibold"
       >
-        <h1 className="py-16 md:py-24 text-3xl">Requests</h1>
+        <h1 className="text-4xl">Requests</h1>
         <div
           className="w-full grid sm:grid-cols-2 md:grid-cols-5 gap-8 md:gap-12 
           [&_div]:space-y-2 md:[&_div]:col-span-2
@@ -122,7 +121,8 @@ export default function Requests() {
 
         {/* TODO: Add new theme color #09578A */}
         <div
-          className="z-2 w-full mt-24 -mb-24 p-8 flex flex-col gap-2 items-center  
+          className="z-2 w-full p-8
+            flex flex-col gap-2 items-center  
             bg-[#09578A] rounded-3xl text-sand-light"
         >
           <h2 className="text-2xl">Want a Website?</h2>
@@ -131,7 +131,7 @@ export default function Requests() {
           </span>
           <a
             className="mt-4 px-12 p-4 bg-sand-light rounded-lg
-              text-ocean-dark font-semibold
+              text-ocean-dark font-semibold text-center
               transition duration-300 hover:bg-[#09578A] 
               hover:outline-2 hover:outline-sand-light hover:text-sand-light"
             href="https://go.umd.edu/CCC-website-request"
@@ -141,16 +141,34 @@ export default function Requests() {
         </div>
       </div>
 
-      <Waves className="z-1 w-full h-48 bg-transparent -scale-x-100 fill-white" />
+      <Waves
+        className="z-1 w-full h-48 -my-24
+        bg-transparent -scale-x-100 fill-rose-500/10"
+      />
 
       {/* TODO: Add new theme color #BAEBF8 */}
       {/* "Want to Join" Section */}
       <div
-        className="-mt-24 pt-48 flex flex-col items-center 
-          bg-linear-to-b from-white to-[#BAEBF8]"
+        className="-mt-48 pt-48 flex flex-col items-center 
+          bg-linear-to-b from-amber-500 to-[#BAEBF8]"
       >
-        <div className="z-1 max-w-250">
-          <Accordion labels={questions} content={answers} />
+        <div className="p-16 space-y-16 text-ocean-dark">
+          <div className="space-y-4 text-center">
+            <h2 className="text-4xl font-bold">Want to Join?</h2>
+            <p className="text-base">
+              If you're interested in becoming part of <b>Campus Coders Crew</b>
+              , please fill out one of the forms below!
+            </p>
+
+            <div></div>
+          </div>
+
+          <div className="z-1 max-w-250 px-4 space-y-8">
+            <h3 className="text-2xl font-bold text-center">
+              Frequently Asked Questions
+            </h3>
+            <Accordion labels={questions} content={answers} />
+          </div>
         </div>
       </div>
 

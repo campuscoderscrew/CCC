@@ -31,7 +31,7 @@ export default function Accordion(props: Props) {
 
   return (
     <div
-      className="min-w-full px-16 py-8 flex flex-col bg-white 
+      className="min-w-full px-4 md:px-8 lg:px-16 py-8 flex flex-col bg-white 
       rounded-xl shadow-lg divide-y *:border-black/20"
     >
       {labels.map((title: string, i: number) => (
