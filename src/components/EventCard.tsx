@@ -22,7 +22,7 @@ export default function EventCard({ date, time, title, tags, description, contac
         <div style={{
             backgroundColor: '#FFFFFD',
             borderRadius: '18px',
-            boxShadow: '0px 13px 55px #EAEAEA',
+            boxShadow: '0px 0px 13px #EAEAEA',
             padding: '2rem',
             width: '320px',
             display: 'flex',
