@@ -3,10 +3,9 @@ import {
   FaHtml5,
   FaCss3Alt,
   FaJs,
-  FaReact,
-  FaPython,
-  FaNodeJs,
   FaUser,
+  FaSearch,
+  FaChevronDown,
 } from "react-icons/fa";
 import type { IconType } from "react-icons";
 
@@ -14,7 +13,7 @@ import NavBar from "../components/NavBar";
 import Footer from "../components/HomePage/Footer";
 import singleShark from "@assets/single-shark.png";
 
-type TechIcon = "html" | "css" | "js" | "react" | "python" | "node";
+type TechIcon = "html" | "css" | "js";
 
 type Project = {
   name: string;
@@ -69,15 +68,13 @@ const techIconMap: Record<
   html: { Icon: FaHtml5, color: "white", bg: "#E34F26" },
   css: { Icon: FaCss3Alt, color: "white", bg: "#1572B6" },
   js: { Icon: FaJs, color: "black", bg: "#F7DF1E" },
-  react: { Icon: FaReact, color: "#1572B6", bg: "#222" },
-  python: { Icon: FaPython, color: "white", bg: "#3776AB" },
-  node: { Icon: FaNodeJs, color: "white", bg: "#339933" },
 };
 
 function ProjectCard({ project }: { project: Project }) {
   return (
     <div
-      className="bg-white border-2 border-white rounded-lg p-4 flex flex-col gap-3
+      className="bg-white border-2 border-white rounded-lg p-4 w-65
+        flex flex-col gap-3
         transition duration-300 hover:shadow-lg hover:-translate-y-1"
     >
       <h3 className="font-bold text-ocean-dark text-lg text-center">{project.name}</h3>
@@ -118,8 +115,11 @@ function ProjectCard({ project }: { project: Project }) {
 
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState("All");
+  const [search, setSearch] = useState("");
 
   const filtered = projects.filter((p) => {
+    const matchesSearch = p.name.toLowerCase().includes(search.toLowerCase());
+    if (!matchesSearch) return false;
     if (activeFilter === "All") return true;
     if (/^\d{4}$/.test(activeFilter)) return p.year === parseInt(activeFilter);
     return p.team === activeFilter;
@@ -162,11 +162,11 @@ export default function Projects() {
       </svg>
 
       {/* Projects */}
-      <section className="relative overflow-hidden bg-[#044377] text-sand-light py-12 px-4">
+      <section className="relative overflow-hidden bg-[#044377] py-12 px-4">
         {/* Top-left shark */}
         <div
           aria-hidden
-          className="absolute left-4 top-25 w-20 h-20 pointer-events-none rotate-[-15deg]"
+          className="absolute left-[calc((100%_-_40rem)/6_+_1.5rem)] top-25 w-20 h-20 pointer-events-none rotate-[-15deg]"
           style={{
             WebkitMaskImage: `url(${singleShark})`,
             maskImage: `url(${singleShark})`,
@@ -181,7 +181,7 @@ export default function Projects() {
         {/* Top-right shark */}
         <div
           aria-hidden
-          className="absolute right-6 top-16 w-40 h-40 pointer-events-none rotate-[20deg] scale-x-[-1]"
+          className="absolute right-[calc((100%_-_40rem)/6_-_1rem)] top-16 w-40 h-40 pointer-events-none rotate-[20deg] scale-x-[-1]"
           style={{
             WebkitMaskImage: `url(${singleShark})`,
             maskImage: `url(${singleShark})`,
@@ -196,7 +196,7 @@ export default function Projects() {
         {/* Bottom-left shark */}
         <div
           aria-hidden
-          className="absolute left-8 bottom-14 w-36 h-36 pointer-events-none rotate-[30deg]"
+          className="absolute left-[calc((100%_-_40rem)/6_-_0.5rem)] bottom-14 w-36 h-36 pointer-events-none rotate-[30deg]"
           style={{
             WebkitMaskImage: `url(${singleShark})`,
             maskImage: `url(${singleShark})`,
@@ -211,7 +211,7 @@ export default function Projects() {
         {/* Bottom-right shark */}
         <div
           aria-hidden
-          className="absolute right-8 bottom-10 w-28 h-28 pointer-events-none rotate-[-10deg] scale-x-[-1]"
+          className="absolute right-[calc((100%_-_40rem)/6_+_0.5rem)] bottom-10 w-28 h-28 pointer-events-none rotate-[-10deg] scale-x-[-1]"
           style={{
             WebkitMaskImage: `url(${singleShark})`,
             maskImage: `url(${singleShark})`,
@@ -223,6 +223,32 @@ export default function Projects() {
           }}
         />
 
+        {/* Search bar */}
+        <div className="relative z-10 flex justify-center mb-8">
+          <div
+            className="flex items-center gap-3 w-full max-w-[700px]
+              bg-white rounded-full px-5 py-2"
+          >
+            <button
+              className="flex items-center gap-1.5 bg-transparent border-none
+                cursor-pointer text-ocean-dark font-medium whitespace-nowrap"
+            >
+              Project
+              <FaChevronDown size={11} />
+            </button>
+            <div className="w-px h-6 bg-gray-300" />
+            <input
+              type="text"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder="Search"
+              className="flex-1 min-w-0 bg-transparent border-none outline-none
+                text-ocean-dark placeholder:text-gray-400"
+            />
+            <FaSearch className="text-ocean-dark shrink-0" size={16} />
+          </div>
+        </div>
+
         {/* Filters */}
         <div className="relative z-10 -mx-4 flex flex-wrap justify-evenly mb-10">
           {filters.map((f) => {
@@ -232,7 +258,7 @@ export default function Projects() {
                 onClick={() => setActiveFilter(f)}
                 className="w-32 py-3 rounded-xl font-bold cursor-pointer
                   border-none transition-colors duration-300 ease-out
-                  bg-[#193463] text-sand-light
+                  bg-[#193463] text-white
                   hover:bg-white hover:text-[#193463]"
               >
                 {f}
@@ -242,7 +268,7 @@ export default function Projects() {
         </div>
 
         {/* Grid */}
-        <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-10 mx-[calc((100vw-40rem)/6+3rem)]">
+        <div className="relative z-10 grid grid-cols-2 gap-y-18 gap-x-[clamp(8rem,8vw,10rem)] w-fit mx-auto justify-items-center">
           {filtered.map((p, i) => (
             <ProjectCard key={i} project={p} />
           ))}
@@ -282,18 +308,18 @@ export default function Projects() {
           </h2>
           <a
             href="https://go.umd.edu/CCC-website-request"
-            className="px-6 py-3 bg-ocean-dark text-sand-light font-bold rounded-lg
+            className="px-6 py-3 bg-ocean-dark text-white font-bold rounded-lg
               no-underline transition-colors duration-300 ease-out
               hover:bg-sand-light hover:text-ocean-dark"
           >
             Request a Website!
           </a>
         </section>
-      </div>
 
-      {/* Footer */}
-      <div className="bg-sky-light px-4 pb-4">
-        <Footer />
+        {/* Footer */}
+        <div className="px-4 pb-4">
+          <Footer />
+        </div>
       </div>
     </div>
   );
