@@ -166,7 +166,7 @@ export default function Projects() {
         {/* Top-left shark */}
         <div
           aria-hidden
-          className="absolute left-[calc((100%_-_40rem)/6_+_1.5rem)] top-25 w-20 h-20 pointer-events-none rotate-[-15deg]"
+          className="absolute left-[calc((100%_-_40rem)/6_+_1.5rem)] top-45 w-20 h-20 pointer-events-none rotate-[-60deg]"
           style={{
             WebkitMaskImage: `url(${singleShark})`,
             maskImage: `url(${singleShark})`,
@@ -181,7 +181,7 @@ export default function Projects() {
         {/* Top-right shark */}
         <div
           aria-hidden
-          className="absolute right-[calc((100%_-_40rem)/6_-_1rem)] top-16 w-40 h-40 pointer-events-none rotate-[20deg] scale-x-[-1]"
+          className="absolute right-[calc((100%_-_40rem)/6_-_1rem)] top-40 w-40 h-40 pointer-events-none rotate-[20deg]"
           style={{
             WebkitMaskImage: `url(${singleShark})`,
             maskImage: `url(${singleShark})`,
@@ -196,7 +196,7 @@ export default function Projects() {
         {/* Bottom-left shark */}
         <div
           aria-hidden
-          className="absolute left-[calc((100%_-_40rem)/6_-_0.5rem)] bottom-14 w-36 h-36 pointer-events-none rotate-[30deg]"
+          className="absolute left-[calc((100%_-_40rem)/6_-_0.5rem)] bottom-14 w-36 h-36 pointer-events-none rotate-[-130deg]"
           style={{
             WebkitMaskImage: `url(${singleShark})`,
             maskImage: `url(${singleShark})`,
@@ -211,7 +211,7 @@ export default function Projects() {
         {/* Bottom-right shark */}
         <div
           aria-hidden
-          className="absolute right-[calc((100%_-_40rem)/6_+_0.5rem)] bottom-10 w-28 h-28 pointer-events-none rotate-[-10deg] scale-x-[-1]"
+          className="absolute right-[calc((100%_-_40rem)/6_+_0.5rem)] bottom-10 w-28 h-28 pointer-events-none rotate-[115deg]"
           style={{
             WebkitMaskImage: `url(${singleShark})`,
             maskImage: `url(${singleShark})`,
