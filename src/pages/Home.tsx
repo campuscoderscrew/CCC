@@ -1,5 +1,3 @@
-import React from "react";
-
 import "../index.css"
 
 // import HeroNavBar from "../components/HomePage/HeroNavbar";
