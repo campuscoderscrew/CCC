@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { createRoot } from 'react-dom/client'
-import { HashRouter, useLocation, Routes, Route } from 'react-router'
+import { HashRouter, useLocation, Routes, Route } from 'react-router-dom'
 
 
 import Home from './pages/Home'

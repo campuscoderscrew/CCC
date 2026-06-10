@@ -1,9 +1,9 @@
-import NavBar from "../components/NavBar"
+import NavBar from "../components/NavBar";
 
 export default function Crew(){
     return(
         <>
-            <NavBar/>
+            <NavBar />
         </>
     )
 }
