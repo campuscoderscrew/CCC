@@ -18,6 +18,38 @@ const tagStyles: Record<string, { backgroundColor: string, border: string }> = {
 }
 
 export default function EventCard({ date, time, title, tags, description, contact, location }: EventCardProps) {
+
+    // opens Google Calendar
+    const handleAddToCalendar = () => {
+        const year = new Date().getFullYear()
+        const [startTimeStr, endTimeStr] = time.split(" - ")
+
+        const parseDateTime = (dateStr: string, timeStr: string) => {
+            const naiveDate = new Date(`${dateStr} ${year} ${timeStr}`)
+            const tzDate = new Date(naiveDate.toLocaleString("en-US", { timeZone: "America/New_York" }))
+            const utcDate = new Date(naiveDate.toLocaleString("en-US", { timeZone: "UTC" }))
+            const offset = utcDate.getTime() - tzDate.getTime()
+            return new Date(naiveDate.getTime() + offset)
+        }
+
+        const start = parseDateTime(date, startTimeStr)
+        const end = parseDateTime(date, endTimeStr)
+
+        const formatGCalDate = (d: Date) => {
+            return d.toISOString().replace(/[-:]/g, "").split(".")[0] + "Z"
+        }
+
+        const params = new URLSearchParams({
+            action: "TEMPLATE",
+            text: title,
+            dates: `${formatGCalDate(start)}/${formatGCalDate(end)}`,
+            details: `${description}\n\nContact: ${contact}`,
+            location: location,
+        })
+
+        window.open(`https://calendar.google.com/calendar/render?${params.toString()}`, "_blank")
+    }
+
     return (
         <div style={{
             backgroundColor: '#FFFFFD',
@@ -76,9 +108,9 @@ export default function EventCard({ date, time, title, tags, description, contac
             {/* contact + location */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                 <img src={emailIcon} alt="email" style={{ width: '1.4rem', height: '1.4rem' }} />
-                <span style={{ fontFamily: 'Instrument Sans, sans-serif', color: '#013253', fontSize: '0.9rem' }}>
+                <a href={`mailto:${contact}`} style={{ fontFamily: 'Instrument Sans, sans-serif', color: '#013253', fontSize: '0.9rem', textDecoration: 'none' }}>
                     {contact}
-                </span>
+                </a>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginTop: '-0.5rem' }}>
                 <img src={locationIcon} alt="location" style={{ width: '1.4rem', height: '1.4rem' }} />
@@ -89,7 +121,7 @@ export default function EventCard({ date, time, title, tags, description, contac
 
             {/* calendar btn */}
             <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '0.5rem' }}>
-                <button style={{
+                <button onClick={handleAddToCalendar} style={{
                     backgroundColor: '#09578A',
                     color: '#FEFCF2',
                     fontFamily: 'Kumbh Sans, sans-serif',
