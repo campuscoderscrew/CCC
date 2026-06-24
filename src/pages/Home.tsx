@@ -1,6 +1,5 @@
 import "../index.css"
 
-// import HeroNavBar from "../components/HomePage/HeroNavbar";
 import Hero from "../components/HomePage/Hero";
 import Events from "../components/HomePage/Events";
 import WebApply from "../components/HomePage/WebApply";
@@ -8,13 +7,12 @@ import Join from "../components/HomePage/Join";
 import FAQ from "../components/HomePage/FAQ";
 import Contact from "../components/HomePage/Contact";
 import Footer from "../components/HomePage/Footer";
-import NavBar from "../components/NavBar";
+import Navbar from "../components/Navbar";
 
 export default function Home() {
   return (
     <div className="relative flex flex-col">
-      {/** <HeroNavbar />*/}
-      <NavBar />
+      <Navbar />
       <Hero />
       <Events />
       <WebApply />

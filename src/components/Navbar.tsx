@@ -11,7 +11,7 @@ const navLinks = [
   { label: "Projects", to: "/projects" },
 ];
 
-export default function NavBar() {
+export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const linkClass =
