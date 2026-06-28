@@ -1,10 +1,8 @@
-import { useEffect } from 'react'
-import { createRoot } from 'react-dom/client'
-import { HashRouter, useLocation, Routes, Route } from 'react-router-dom'
+import { useEffect } from "react";
+import { createRoot } from "react-dom/client";
+import { HashRouter, useLocation, Routes, Route } from "react-router";
 
-
-import Home from './pages/Home'
-
+import Home from "./pages/Home";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -14,10 +12,10 @@ function ScrollToTop() {
   return null;
 }
 
-import Crew from './pages/Crew';
-import Events from './pages/Events';
-import Projects from './pages/Projects';
-import Requests from './pages/Requests';
+import Crew from "./pages/Crew";
+import Events from "./pages/Events";
+import Projects from "./pages/Projects";
+import Requests from "./pages/Requests";
 
 export default function App() {
   return (
@@ -30,16 +28,13 @@ export default function App() {
         <Route path="events" element={<Events />} />
         <Route path="projects" element={<Projects />} />
         <Route path="requests" element={<Requests />} />
-
       </Routes>
     </>
   );
 }
 
-
-
-createRoot(document.getElementById('root')!).render(
-  <HashRouter >
+createRoot(document.getElementById("root")!).render(
+  <HashRouter>
     <App />
-  </HashRouter >
-)
+  </HashRouter>,
+);
