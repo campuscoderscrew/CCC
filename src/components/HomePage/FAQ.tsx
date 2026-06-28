@@ -1,4 +1,4 @@
-import Accordion from "./Accordion";
+import Accordion from "../Accordion";
 
 // Drop down 6 questions
 export default function FAQ() {
