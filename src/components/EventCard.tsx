@@ -1,4 +1,3 @@
-import React from "react"
 import emailIcon from "../assets/Email.png"
 import locationIcon from "../assets/Location.png"
 
