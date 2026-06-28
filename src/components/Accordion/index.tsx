@@ -7,6 +7,13 @@ type Props = {
   content: ReactNode[];
 };
 
+/**
+ * Creates an accordion with opening animations for eacher header
+ * @param props An object containign the labels and content for each header. The
+ * labels and content are expected to have the same length.
+ * @returns An accordion with `labels` as headers and their corresponding
+ * `content` as their body
+ */
 export default function Accordion(props: Props) {
   const { labels, content } = props;
 
@@ -23,7 +30,10 @@ export default function Accordion(props: Props) {
   };
 
   return (
-    <div className="min-w-full flex flex-col bg-sand-light rounded-xl shadow-md">
+    <div
+      className="min-w-full px-4 md:px-8 lg:px-16 py-8 flex flex-col bg-white 
+      rounded-xl shadow-lg divide-y *:border-black/20"
+    >
       {labels.map((title: string, i: number) => (
         <AccordionItem
           key={`accordion-${i}-${title}`}
