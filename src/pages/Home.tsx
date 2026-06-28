@@ -1,5 +1,3 @@
-import React from "react";
-
 import "../index.css"
 
 // import HeroNavBar from "../components/HomePage/HeroNavbar";
@@ -16,7 +14,7 @@ export default function Home() {
   return (
     <div className="relative flex flex-col">
       {/** <HeroNavbar />*/}
-      <NavBar/>
+      <NavBar />
       <Hero />
       <Events />
       <WebApply />
