@@ -26,9 +26,9 @@ export default function NavBar() {
       <div
         className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center py-4 px-4 min-[600px]:px-8"
         style={{
-          backgroundColor: "hsla(190, 85%, 80%, 0.7)",
-          backdropFilter: "blur(8px)",
-          borderBottom: "hsl(190, 85%, 80%) solid 1px",
+          backgroundColor: "transparent",
+          backdropFilter: "none",
+          borderBottom: "none",
         }}
       >
         {/* Logo + name */}
@@ -39,9 +39,9 @@ export default function NavBar() {
           <img
             src={logo}
             alt="Campus Coders Crew Logo"
-            className="h-8 w-8 -mb-[0.6rem] -mt-[0.3rem]"
+            className="h-8 w-auto"
           />
-          Campus Coders Crew
+          CCC
         </Link>
 
         {/* Hamburger */}
@@ -92,7 +92,7 @@ export default function NavBar() {
       </div>
 
       {/* Desktop nav */}
-      <nav className="fixed top-0 right-4 z-50 hidden min-[600px]:flex flex-row">
+      <nav className="fixed top-0 left-1/2 -translate-x-1/2 z-50 hidden min-[600px]:flex flex-row">
         {navLinks.map(({ label, to }) => (
           <NavLink key={to} to={to} className={activeLinkClass}>
             {label}
