@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa";
 import type { IconType } from "react-icons";
 
-import NavBar from "../components/NavBar";
+import Navbar from "../components/Navbar";
 import Footer from "../components/HomePage/Footer";
 import singleShark from "@assets/single-shark.png";
 
@@ -127,7 +127,7 @@ export default function Projects() {
 
   return (
     <div className="relative flex flex-col">
-      <NavBar />
+      <Navbar />
 
       {/* Title */}
       <section

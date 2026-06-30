@@ -1,5 +1,5 @@
-import React, { useState } from "react"
-import NavBar from "../components/NavBar"
+import { useState } from "react"
+import Navbar from "../components/Navbar"
 import EventCard from "../components/EventCard"
 import Contact from "..//components/HomePage/Contact"
 import Footer from "../components/HomePage/Footer"
@@ -30,7 +30,7 @@ export default function Events() {
 
     return (
         <>
-            <NavBar />
+            <Navbar />
 
             {/* page bg */}
             <div style={{ backgroundColor: '#193463' }}>

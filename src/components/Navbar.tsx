@@ -7,11 +7,11 @@ const navLinks = [
   { label: "Home", to: "/home" },
   { label: "Requests", to: "/requests" },
   { label: "Events", to: "/events" },
-  { label: "Crew", to: "/crew" },
+  // { label: "Crew", to: "/crew" },
   { label: "Projects", to: "/projects" },
 ];
 
-export default function NavBar() {
+export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const linkClass =

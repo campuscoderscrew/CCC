@@ -1,4 +1,4 @@
-import NavBar from "../components/NavBar";
+import Navbar from "../components/Navbar";
 import ContactFooter from "../components/ContactFooter";
 
 import { Waves1, Waves2 } from "../components/Icons";
@@ -62,10 +62,10 @@ const answers = [
 export default function Requests() {
   return (
     <>
-      <NavBar />
+      <Navbar />
       {/*
        * Navbar is fixed, not sticky; additional space is inserted after the
-       * navbar until the issue is resolved
+       * Navbar until the issue is resolved
        */}
       <div className="h-14" />
 

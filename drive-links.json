@@ -1,0 +1,22 @@
+{
+  "drive": "https://drive.google.com/drive/u/2/folders/1wgRdz7p00ebKFexzmUvdw5mwI36eGViq?role=writer",
+  "drive/int": "https://drive.google.com/drive/u/2/folders/1H3SkMOkJ4TmgAJKEvirFftRoMEw0bpRW?role=writer",
+  "drive/int/analytics": "https://drive.google.com/drive/u/2/folders/15AXEW8n3mBXBhTd6OXQBzn1LOTrAyANd?role=writer",
+  "drive/int/finance": "https://drive.google.com/drive/u/2/folders/1BtcN3WTZj8RtWkrtIWnFN1wVfS7G30Oy?role=writer",
+  "drive/int/hr": "https://drive.google.com/drive/u/2/folders/1VGzNifazobC-DsjYBNjjkXIR5UNAUZQL?role=writer",
+  "drive/int/rm": "https://drive.google.com/drive/u/2/folders/1eFlaOW9IFuThRyu2gDFG1A5FXRxwcGZR?role=writer",
+  "drive/int/logs": "https://docs.google.com/spreadsheets/d/1UnaAUeOrI88sPLkdHYfUdv3EgRKXdO746nantjgSg1I/edit?usp=drive_web&ouid=113785768859363425196",
+
+  "drive/ext": "https://drive.google.com/drive/u/2/folders/1EXy4F6x6mpk-JCmx5AhOnzWhgL3HNal-?role=writer",
+  "drive/ext/events": "https://drive.google.com/drive/u/2/folders/17jArBgEksj9aodvOjcyT1kPMKlzWLN3Q?role=writer",
+  "drive/ext/marketing": "https://drive.google.com/drive/u/2/folders/1R0R65-0Q-vuFBbQpr3e2sjIR8y0diMFv?role=writer",
+  "drive/ext/pr": "https://drive.google.com/drive/u/2/folders/1pI82CobBaVOpWPnKmS95JrPs7N9VFHGt?role=writer",
+  "drive/ext/recruitment": "https://drive.google.com/drive/u/2/folders/1p8dQ8f5c4T4JSf2fMPiLiB591q8OugPk?role=writer",
+  "drive/ext/logs": "https://docs.google.com/spreadsheets/d/1YH1fzHa6HR-euJH1yIfTzDq-R8BE77LEmcE21DJ6yTo/edit?usp=drive_web&ouid=113785768859363425196",
+  "drive/dev": "https://drive.google.com/drive/u/2/folders/1VtRvvzLMkJPhCVna-c2NeYP1150bIX2w?role=writer",
+  "drive/dev/dev": "https://drive.google.com/drive/u/2/folders/1ATV90kIr87RLe2GHfQc-beYr3gIJbfcf?role=writer",
+  "drive/dev/dev/logs": "https://docs.google.com/spreadsheets/d/1U0E0pJvZlwv6fXohMfq_yWEojLph2R_8uT7GP8Mp3ZU/edit?usp=drive_web&ouid=113785768859363425196",
+  "drive/dev/qa": "https://drive.google.com/drive/u/2/folders/1NEepoa5ghwEZQyfuALjqFu-cOf3vNPFA?role=writer",
+  "drive/dev/logs": "https://docs.google.com/spreadsheets/d/1h7oqxszmWEuqIoRjimYkhf_6skzuRDAf2xIieGLwhzc/edit?usp=drive_web&ouid=113785768859363425196"
+
+}
