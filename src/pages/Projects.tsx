@@ -22,6 +22,7 @@ type Project = {
   year: number;
   techStack: TechIcon[];
   memberCount: number;
+  image?: string; // URL or imported asset path; optional so existing data doesn't break
 };
 
 const projects: Project[] = [
@@ -70,6 +71,41 @@ const techIconMap: Record<
   js: { Icon: FaJs, color: "black", bg: "#F7DF1E" },
 };
 
+function TechStackAndMembers({ project }: { project: Project }) {
+
+  return (<></>) // Temporary return to hide the bottom row
+
+  return (
+    <div className="flex justify-between items-center gap-2 flex-wrap">
+      <div className="flex gap-1">
+        {project.techStack.map((tech, i) => {
+          const { Icon, color, bg } = techIconMap[tech];
+          return (
+            <div
+              key={i}
+              className="w-7 h-7 rounded flex items-center justify-center"
+              style={{ backgroundColor: bg, color }}
+            >
+              <Icon size={18} />
+            </div>
+          );
+        })}
+      </div>
+      <div className="flex gap-1">
+        {Array.from({ length: project.memberCount }).map((_, i) => (
+          <div
+            key={i}
+            className="w-7 h-7 rounded-full bg-gray-300 flex items-center
+              justify-center text-gray-500"
+          >
+            <FaUser size={14} />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function ProjectCard({ project }: { project: Project }) {
   return (
     <div
@@ -78,37 +114,21 @@ function ProjectCard({ project }: { project: Project }) {
         transition duration-300 hover:shadow-lg hover:-translate-y-1"
     >
       <h3 className="font-bold text-ocean-dark text-lg text-center">{project.name}</h3>
-      <div className="aspect-square bg-[#043e6c] rounded" />
+
+      {project.image ? (
+        <img
+          src={project.image}
+          alt={project.name}
+          className="aspect-square w-full object-cover rounded"
+        />
+      ) : (
+        <div className="aspect-square bg-[#043e6c] rounded" />
+      )}
+
       <div className="text-sm text-center text-ocean-dark">
         {project.team} - {project.semester}
       </div>
-      <div className="flex justify-between items-center gap-2 flex-wrap">
-        <div className="flex gap-1">
-          {project.techStack.map((tech, i) => {
-            const { Icon, color, bg } = techIconMap[tech];
-            return (
-              <div
-                key={i}
-                className="w-7 h-7 rounded flex items-center justify-center"
-                style={{ backgroundColor: bg, color }}
-              >
-                <Icon size={18} />
-              </div>
-            );
-          })}
-        </div>
-        <div className="flex gap-1">
-          {Array.from({ length: project.memberCount }).map((_, i) => (
-            <div
-              key={i}
-              className="w-7 h-7 rounded-full bg-gray-300 flex items-center
-                justify-center text-gray-500"
-            >
-              <FaUser size={14} />
-            </div>
-          ))}
-        </div>
-      </div>
+      <TechStackAndMembers project={project} />
     </div>
   );
 }

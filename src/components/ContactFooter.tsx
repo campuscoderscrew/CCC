@@ -37,7 +37,7 @@ export default function ContactFooter({ className }: { className?: string }) {
           </a>
         </div>
 
-        <span>Copyright © 2026 | Campus Coder Crew</span>
+        <span>Copyright © 2026 | Campus Coders Crew</span>
       </div>
     </div>
   );

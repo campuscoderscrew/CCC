@@ -1,28 +1,55 @@
 import { useState } from "react"
 import Navbar from "../components/Navbar"
 import EventCard from "../components/EventCard"
-import Contact from "..//components/HomePage/Contact"
+import Contact from "../components/HomePage/Contact"
 import Footer from "../components/HomePage/Footer"
 
-const events = [
-    { date: "June 11", time: "4:00 - 6:00 PM", title: "General Body Meeting", tags: ["Open Meeting", "Club Meeting"], description: "Some general details about the events, what's covered, purpose, etc. Lorem ipsum sit amet dolor, lorem ipsum...", contact: "primary_contact@gmail.com", location: "Some St. Place, Building" },
-    { date: "June 11", time: "6:00 - 7:00 PM", title: "Team Zebra Meeting", tags: ["Team Meeting"], description: "Some general details about the events, what's covered, purpose, etc. Lorem ipsum sit amet dolor, lorem ipsum...", contact: "primary_contact@gmail.com", location: "Some St. Place, Building" },
-    { date: "June 16", time: "4:00 - 6:00 PM", title: "General Body Meeting", tags: ["Open Meeting", "Club Meeting"], description: "Some general details about the events, what's covered, purpose, etc. Lorem ipsum sit amet dolor, lorem ipsum...", contact: "primary_contact@gmail.com", location: "Some St. Place, Building" },
-    { date: "June 18", time: "4:00 - 6:00 PM", title: "Team Tiger Meeting", tags: ["Team Meeting"], description: "Some general details about the events, what's covered, purpose, etc. Lorem ipsum sit amet dolor, lorem ipsum...", contact: "primary_contact@gmail.com", location: "Some St. Place, Building" },
-    { date: "June 19", time: "5:00 - 6:00 PM", title: "General Body Meeting", tags: ["Open Meeting", "Club Meeting"], description: "Some general details about the events, what's covered, purpose, etc. Lorem ipsum sit amet dolor, lorem ipsum...", contact: "primary_contact@gmail.com", location: "Some St. Place, Building" },
-    { date: "June 26", time: "4:00 - 6:00 PM", title: "General Body Meeting", tags: ["Open Meeting", "Club Meeting"], description: "Some general details about the events, what's covered, purpose, etc. Lorem ipsum sit amet dolor, lorem ipsum...", contact: "primary_contact@gmail.com", location: "Some St. Place, Building" },
-]
+import { meetingData } from "../data/MeetingData"
 
-const TAG_OPTIONS = ["All", "Development Meeting", "Committee Meeting", "General Body Meeting"]
+const TAG_OPTIONS = ["All", "Department Meeting", "Team Meeting"]
 
+type EventCardProps = {
+    day: string
+    time: string
+    title: string
+    tags: string[]
+    description: string
+    contact: string
+    location: string
+}
 
-export default function Events() {
+export default function Meetings() {
+    const dayOrder = ["Sundays", "Mondays", "Tuesdays", "Wednesdays", "Thursdays", "Fridays", "Saturdays"];
+
+    function timeToMinutes(timeStr: string): number {
+        // timeStr like "7:00 PM"
+        const [time, period] = timeStr.trim().split(" ");
+        const [hoursStr, minutesStr] = time.split(":");
+        let hours = Number(hoursStr);
+        const minutes = Number(minutesStr);
+
+        if (period === "PM" && hours !== 12) hours += 12;
+        if (period === "AM" && hours === 12) hours = 0;
+
+        return hours * 60 + minutes;
+    }
+
+    function getStartMinutes(event: EventCardProps): number {
+        const startTime = event.time.split(" - ")[0]; // "7:00 PM" from "7:00 PM - 7:30 PM"
+        return timeToMinutes(startTime);
+    }
+
+    function compareEvents(a: EventCardProps, b: EventCardProps): number {
+        const dayDiff = dayOrder.indexOf(a.day) - dayOrder.indexOf(b.day);
+        if (dayDiff !== 0) return dayDiff;
+        return getStartMinutes(a) - getStartMinutes(b);
+    }
 
     const [searchText, setSearchText] = useState("")
     const [selectedTag, setSelectedTag] = useState("All")
     const [dropdownOpen, setDropdownOpen] = useState(false)
 
-    const filteredEvents = events.filter((event) => {
+    const filteredEvents = meetingData.filter((event) => {
         const matchesSearch = event.title.toLowerCase().includes(searchText.toLowerCase())
         const matchesTag = selectedTag === "All" || event.tags.includes(selectedTag)
         return matchesSearch && matchesTag
@@ -44,8 +71,10 @@ export default function Events() {
                     {/* Title */}
                     <div className="w-full text-center pt-16 pb-4 px-4">
                         <h1 className="text-4xl font-bold" style={{ color: '#193463' }}>
-                            Upcoming Events & Meetings
+                            Weekly Meetings
                         </h1>
+                        <br></br>
+                        <p>Some meetings may deviate from their weekly time on a case-by-case basis. <br></br>Please check the Google Calendar on the Home page for specific updates</p>
                     </div>
 
                     {/* Search Bar */}
@@ -120,10 +149,13 @@ export default function Events() {
                         {/* cards grid */}
                         <div style={{ position: 'relative', padding: '3rem 2rem', paddingTop: '120px', marginTop: filteredEvents.length <= 3 ? '-35rem' : '-50rem', marginBottom: '-15rem', zIndex: 3 }}>
                             <div className="grid gap-x-10 gap-y-10 mx-auto justify-center" style={{ gridTemplateColumns: 'repeat(auto-fit, 320px)', maxWidth: '1080px' }}>
-                                {filteredEvents.map((event, i) => (
-                                    <div key={i} style={{ pointerEvents: 'auto' }}>
-                                        <EventCard {...event} />
-                                    </div>
+                                {filteredEvents
+                                    .filter((event) => event.title && event.title.trim() !== "")
+                                    .sort(compareEvents)
+                                    .map((event, i) => (
+                                        <div key={i} style={{ pointerEvents: 'auto' }}>
+                                            <EventCard {...event} />
+                                        </div>
                                 ))}
                             </div>
                         </div>

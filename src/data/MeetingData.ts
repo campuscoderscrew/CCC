@@ -1,0 +1,14 @@
+export const meetingData = [
+    {day: "Sundays", time: "9:30 PM - 10:00 PM", title: "Executive Board Meeting", tags: ["Department Meeting"], description: "Planning the direction of the organization", contact: "ble@terpmail.umd.edu", location: "board-voice Discord server voice channel"},
+    {day: "Mondays", time: "7:00 PM - 7:15 PM", title: "Team Whale Meeting", tags: ["Team Meeting"], description: "Working on the HR System project", contact: "ble@terpmail.umd.edu", location: "meeting-room-1 Discord server voice channel"},
+    {day: "Sundays", time: "3:00 PM - 3:30 PM", title: "Human Resources Department Meeting", tags: ["Department Meeting"], description: "Processing member applications and position reassignments", contact: "campuscoderscrew@gmail.com", location: "Discord server voice channel"},
+    {day: "Mondays", time: "6:00 PM - 6:30 PM", title: "Product Department Meeting", tags: ["Department Meeting"], description: "Generating product specifications based on client information", contact: "campuscoderscrew@gmail.com", location: "Discord server voice channel"},
+    {day: "Mondays", time: "6:30 PM - 7:00 PM", title: "Events Department Meeting", tags: ["Department Meeting"], description: "Planning biweekly workshops and biweekly social events", contact: "campuscoderscrew@gmail.com", location: "Discord server voice channel"},
+    {day: "Mondays", time: "8:00 PM - 8:30 PM", title: "Recruitment Department Meeting", tags: ["Department Meeting"], description: "Recruiting prospective members on LinkedIn", contact: "campuscoderscrew@gmail.com", location: "Discord server voice channel"},
+    {day: "Thursdays", time: "7:00 PM - 7:30 PM", title: "Marketing Department Meeting", tags: ["Department Meeting"], description: "Posting promotional materials on social media platforms", contact: "campuscoderscrew@gmail.com", location: "Discord server voice channel"},
+    {day: "Thursdays", time: "7:30 PM - 8:00 PM", title: "Finance Department Meeting", tags: ["Department Meeting"], description: "Managing club finances; analyzing stocks", contact: "campuscoderscrew@gmail.com", location: "Discord server voice channel"},
+    {day: "Sundays", time: "10:30 PM - 11:00 PM", title: "Team Angel Meeting", tags: ["Team Meeting"], description: "Working on Terps Racing's website", contact: "ble2005@terpmail.umd.edu", location: "Discord server voice channel"},
+    {day: "", time: "", title: "", tags: [""], description: "", contact: "", location: "Discord server voice channel"},
+    {day: "", time: "", title: "", tags: [""], description: "", contact: "", location: "Discord server voice channel"},
+
+]
