@@ -13,7 +13,7 @@ function ScrollToTop() {
 }
 
 import Crew from "./pages/Crew";
-import Events from "./pages/Events";
+import Meetings from "./pages/Meetings";
 import Projects from "./pages/Projects";
 import Requests from "./pages/Requests";
 
@@ -25,7 +25,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="home" element={<Home />} />
         <Route path="crew" element={<Crew />} />
-        <Route path="events" element={<Events />} />
+        <Route path="meetings" element={<Meetings />} />
         <Route path="projects" element={<Projects />} />
         <Route path="requests" element={<Requests />} />
       </Routes>

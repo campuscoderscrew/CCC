@@ -2,7 +2,7 @@ import emailIcon from "../assets/Email.png"
 import locationIcon from "../assets/Location.png"
 
 type EventCardProps = {
-    date: string
+    day: string
     time: string
     title: string
     tags: string[]
@@ -11,13 +11,14 @@ type EventCardProps = {
     location: string
 }
 const tagStyles: Record<string, { backgroundColor: string, border: string }> = {
-    "Club Meeting":  { backgroundColor: '#FAF7EC', border: '1px solid #E2D8B5' },
-    "Open Meeting":  { backgroundColor: '#CBF0F9', border: '1px solid #8BBDC9' },
+    "Department Meeting":  { backgroundColor: '#FAF7EC', border: '1px solid #E2D8B5' },
+    "Workshop Meeting":  { backgroundColor: '#CBF0F9', border: '1px solid #8BBDC9' },
     "Team Meeting":  { backgroundColor: '#F3F3F3', border: '1px solid #99C5CF' },
 }
 
-export default function EventCard({ date, time, title, tags, description, contact, location }: EventCardProps) {
 
+export default function EventCard({ day, time, title, tags, description, contact, location }: EventCardProps) {
+    /*
     // opens Google Calendar
     const handleAddToCalendar = () => {
         const year = new Date().getFullYear()
@@ -49,6 +50,30 @@ export default function EventCard({ date, time, title, tags, description, contac
         window.open(`https://calendar.google.com/calendar/render?${params.toString()}`, "_blank")
     }
 
+    
+    function CalendarButton(){
+        return(
+            <>
+                <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '0.5rem' }}>
+                    <button onClick={handleAddToCalendar} style={{
+                        backgroundColor: '#09578A',
+                        color: '#FEFCF2',
+                        fontFamily: 'Kumbh Sans, sans-serif',
+                        borderRadius: '10px',
+                        border: 'none',
+                        marginTop: '-0.5rem',
+                        padding: '0.6rem 1.5rem',
+                        cursor: 'pointer',
+                        fontSize: '0.95rem',
+                        fontWeight: 'bold'
+                    }}> Add to Calendar </button>
+                </div>
+            </>
+        )
+    }
+    */
+
+
     return (
         <div style={{
             backgroundColor: '#FFFFFD',
@@ -68,7 +93,7 @@ export default function EventCard({ date, time, title, tags, description, contac
                 margin: 0,
                 fontSize: '1.25rem',
                 textAlign: 'center'
-            }}> {date} · {time} </p>
+            }}> {day} <br/> {time} </p>
             {/* title */}
             <h3 style={{
                 fontFamily: 'Instrument Sans, sans-serif',
@@ -76,7 +101,8 @@ export default function EventCard({ date, time, title, tags, description, contac
                 color: '#013253',
                 margin: 0,
                 fontSize: '1.5rem',
-                lineHeight: '1.3'
+                lineHeight: '1.3',
+                textAlign: 'center'
             }}> {title} </h3>
 
             {/* tags */}
@@ -118,21 +144,6 @@ export default function EventCard({ date, time, title, tags, description, contac
                 </span>
             </div>
 
-            {/* calendar btn */}
-            <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '0.5rem' }}>
-                <button onClick={handleAddToCalendar} style={{
-                    backgroundColor: '#09578A',
-                    color: '#FEFCF2',
-                    fontFamily: 'Kumbh Sans, sans-serif',
-                    borderRadius: '10px',
-                    border: 'none',
-                    marginTop: '-0.5rem',
-                    padding: '0.6rem 1.5rem',
-                    cursor: 'pointer',
-                    fontSize: '0.95rem',
-                    fontWeight: 'bold'
-                }}> Add to Calendar </button>
-            </div>
 
         </div>
     )

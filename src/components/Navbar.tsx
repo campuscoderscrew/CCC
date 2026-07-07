@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 
 import logo from "@assets/logo.png";
@@ -6,13 +6,27 @@ import logo from "@assets/logo.png";
 const navLinks = [
   { label: "Home", to: "/home" },
   { label: "Requests", to: "/requests" },
-  { label: "Events", to: "/events" },
+  { label: "Meetings", to: "/meetings" },
   // { label: "Crew", to: "/crew" },
-  { label: "Projects", to: "/projects" },
+  // { label: "Projects", to: "/projects" },
 ];
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Toggle once we've scrolled past a small threshold
+      setScrolled(window.scrollY > 10);
+    };
+
+    // Run once on mount in case the page loads already scrolled
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const linkClass =
     "font-bold no-underline px-4 py-4 text-[hsl(204,98%,15%)] hover:bg-[hsl(195,80%,90%)] transition-colors";
@@ -24,23 +38,31 @@ export default function Navbar() {
     <div>
       {/* Main bar */}
       <div
-        className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center py-4 px-4 min-[600px]:px-8"
+        className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center py-4 px-4 min-[600px]:px-8 transition-colors duration-300"
         style={{
-          backgroundColor: "transparent",
-          backdropFilter: "none",
-          borderBottom: "none",
+          backgroundColor: scrolled ? "hsla(0, 0%, 100%, 0.85)" : "transparent",
+          backdropFilter: scrolled ? "blur(8px)" : "none",
+          borderBottom: scrolled
+            ? "hsl(195, 80%, 90%) solid 1px"
+            : "1px solid transparent",
         }}
       >
         {/* Logo + name */}
         <Link
           to="/"
-          className="flex gap-1 font-bold no-underline text-[hsl(204,98%,15%)]"
+          className="flex items-center gap-1 font-bold no-underline text-[hsl(204,98%,15%)]"
         >
-          <img
-            src={logo}
-            alt="Campus Coders Crew Logo"
-            className="h-8 w-auto"
-          />
+          <span className="relative inline-flex items-center justify-center">
+            <span
+              className="absolute inset-0 m-auto h-10 w-10 rounded-full"
+              style={{ backgroundColor: "hsl(204, 91%, 25%)", transform: "translateX(-3px)"}}
+            />
+            <img
+              src={logo}
+              alt="Campus Coders Crew Logo"
+              className="relative h-8 w-auto"
+            />
+          </span>
           CCC
         </Link>
 
