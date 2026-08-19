@@ -1,9 +1,7 @@
 import NavBar from "../components/Navbar";
 import ContactFooter from "../components/ContactFooter";
-import WebsiteApply from "../components/RequestsPage/WebsiteApply";
-import { Waves1, Waves2 } from "../components/Icons";
-import Join from "../components/RequestsPage/Join";
-
+import WebsiteApply from "../components/RequestsPage/ProductApply";
+import { Waves1 } from "../components/Icons";
 
 export default function Requests() {
   return (
@@ -15,30 +13,39 @@ export default function Requests() {
        */}
       <div className="h-14" />
 
-      <WebsiteApply/>
+      {/*
+       * Fades the wave below from the white page background into the
+       * sand-light contact section. Referenced by `fill-[url(#sandFade)]`.
+       * Stop offsets are relative to the wave path's bounding box, so 0% is
+       * the top of the wave shape and 100% is its lowest point.
+       */}
+      <svg aria-hidden="true" className="absolute size-0">
+        <defs>
+          <linearGradient id="sandFade" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="white" />
+            <stop offset="100%" stopColor="var(--color-sand-light)" />
+          </linearGradient>
+        </defs>
+      </svg>
 
-      <Waves1 className="w-full h-48 -my-24 -scale-x-100 bg-transparent fill-white" />
+      <WebsiteApply />
 
-      {/* TODO: Add new theme color #BAEBF8 */}
-      {/* "Want to Join" Section */}
-      {/* `-mt-48` and `pt-48` must match the height of the wave graphic above */}
-      <Join/>
-
-      <Waves2
-        className="relative z-20 w-full h-96 
-          bg-transparent fill-[#BAEBF8]"
-      />
+      {/*
+       * `bg-sand-light` backs the wave so the area below its curve reads as the
+       * contact section. `-mb-px` only closes the subpixel seam. Do not add
+       * negative block margins here: the contact section below is `relative`,
+       * so it paints over this unpositioned SVG and would hide the wave.
+       */}
       <Waves1
-        className="relative z-10 w-full h-96 -mt-48 
-          bg-transparent fill-sky-light"
+        className="w-full h-48 -mb-px -scale-x-100
+          bg-sand-light fill-[url(#sandFade)]"
       />
 
       {/* Contacts */}
-      {/* `-mt-48` and `pt-48` must match the height of the wave graphic above */}
-      <div className="relative -mt-48 pt-48 bg-sand-light">
+      <div className="relative bg-sand-light">
         {/* Grainy sand noise */}
         <svg
-          className="absolute z-0 inset-0 size-full 
+          className="absolute z-0 inset-0 size-full
             grayscale brightness-150 constrast-120 mix-blend-multiply"
         >
           <filter id="noiseFilter">

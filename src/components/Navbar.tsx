@@ -6,6 +6,7 @@ import logo from "@assets/logo.png";
 const navLinks = [
   { label: "Home", to: "/home" },
   { label: "Requests", to: "/requests" },
+  { label: "Apply", to: "/apply" },
   { label: "Meetings", to: "/meetings" },
   // { label: "Crew", to: "/crew" },
   // { label: "Projects", to: "/projects" },
@@ -55,7 +56,10 @@ export default function Navbar() {
           <span className="relative inline-flex items-center justify-center">
             <span
               className="absolute inset-0 m-auto h-10 w-10 rounded-full"
-              style={{ backgroundColor: "hsl(204, 91%, 25%)", transform: "translateX(-3px)"}}
+              style={{
+                backgroundColor: "hsl(204, 91%, 25%)",
+                transform: "translateX(-3px)",
+              }}
             />
             <img
               src={logo}

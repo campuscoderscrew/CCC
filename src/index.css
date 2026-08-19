@@ -1,7 +1,6 @@
-@import url('/fonts/inter.css');
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+@import url("/fonts/inter.css");
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap");
 @import "tailwindcss";
-
 
 @tailwind base;
 @tailwind components;
@@ -30,11 +29,10 @@
   }
 }
 
-
 :root {
   min-width: 320px;
   scroll-behavior: smooth;
-  font-family:  "Instrument Sans", "Inter", sans-serif;
+  font-family: "Instrument Sans", "Inter", sans-serif;
   font-feature-settings: "calt", "ss03", "cv02", "cv05", "cv11";
 }
 
@@ -47,20 +45,42 @@
 }
 
 @keyframes sailboat-wave {
-  0% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(2px) rotate(4deg); }
-  100% { transform: translateY(0) rotate(0deg); }
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(2px) rotate(4deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
 }
 
 @keyframes move-forever {
-  0% { transform: translateX(-90px); }
-  100% { transform: translateX(85px); }
+  0% {
+    transform: translateX(-90px);
+  }
+  100% {
+    transform: translateX(85px);
+  }
 }
 
 .wave-parallax > use {
-  animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
 }
-.wave-parallax > use:nth-child(1) { animation-delay: -2s; animation-duration: 7s; }
-.wave-parallax > use:nth-child(2) { animation-delay: -3s; animation-duration: 10s; }
-.wave-parallax > use:nth-child(3) { animation-delay: -4s; animation-duration: 13s; }
-.wave-parallax > use:nth-child(4) { animation-delay: -5s; animation-duration: 20s; }
+.wave-parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.wave-parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.wave-parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.wave-parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
