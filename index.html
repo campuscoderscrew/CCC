@@ -8,6 +8,14 @@
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      <!--Make old links like https://campuscoderscrew.com/#/requests change to https://campuscoderscrew.com/requests -->
+      if (location.hash.startsWith("#/")) {
+        location.replace(
+          location.pathname.replace(/\/$/, "") + location.hash.slice(1)
+        );
+      }
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

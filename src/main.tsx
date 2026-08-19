@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { createRoot } from "react-dom/client";
-import { HashRouter, useLocation, Routes, Route } from "react-router";
+import { BrowserRouter, useLocation, Routes, Route } from "react-router";
 
 import Home from "./pages/Home";
 
@@ -16,6 +16,8 @@ import Crew from "./pages/Crew";
 import Meetings from "./pages/Meetings";
 import Projects from "./pages/Projects";
 import Requests from "./pages/Requests";
+import Apply from "./pages/Apply";
+import NotFound from "./pages/NotFound";
 
 export default function App() {
   return (
@@ -28,13 +30,16 @@ export default function App() {
         <Route path="meetings" element={<Meetings />} />
         <Route path="projects" element={<Projects />} />
         <Route path="requests" element={<Requests />} />
+        <Route path="apply" element={<Apply />} />
+        {/* Catch-all. Must stay last. */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );
 }
 
 createRoot(document.getElementById("root")!).render(
-  <HashRouter>
+  <BrowserRouter>
     <App />
-  </HashRouter>,
+  </BrowserRouter>
 );

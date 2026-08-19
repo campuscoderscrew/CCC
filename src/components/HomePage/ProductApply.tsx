@@ -4,7 +4,8 @@ import WantWebsiteButton from "./WantWebsiteButton";
 export default function WebApply() {
   return (
     <>
-      <div id="request-website"  
+      <div
+        id="request-website"
         className="pt-8 px-4 flex flex-col gap-4 items-center 
         text-base text-ocean-dark bg-sand-light"
       >
@@ -46,7 +47,7 @@ export default function WebApply() {
           </div>
         </div>
 
-        <WantWebsiteButton/>
+        <WantWebsiteButton />
       </div>
       <svg
         className="bg-sky-light fill-sand-light"

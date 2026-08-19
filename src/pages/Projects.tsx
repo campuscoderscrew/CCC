@@ -72,8 +72,7 @@ const techIconMap: Record<
 };
 
 function TechStackAndMembers({ project }: { project: Project }) {
-
-  return (<></>) // Temporary return to hide the bottom row
+  return <></>; // Temporary return to hide the bottom row
 
   return (
     <div className="flex justify-between items-center gap-2 flex-wrap">
@@ -113,7 +112,9 @@ function ProjectCard({ project }: { project: Project }) {
         flex flex-col gap-3
         transition duration-300 hover:shadow-lg hover:-translate-y-1"
     >
-      <h3 className="font-bold text-ocean-dark text-lg text-center">{project.name}</h3>
+      <h3 className="font-bold text-ocean-dark text-lg text-center">
+        {project.name}
+      </h3>
 
       {project.image ? (
         <img
@@ -175,10 +176,7 @@ export default function Projects() {
           d="M0,130 C350,55 750,210 1200,140 L1200,0 L0,0 Z"
           fill="#2d88b5"
         />
-        <path
-          d="M0,70 C300,0 800,140 1200,80 L1200,0 L0,0 Z"
-          fill="white"
-        />
+        <path d="M0,70 C300,0 800,140 1200,80 L1200,0 L0,0 Z" fill="white" />
       </svg>
 
       {/* Projects */}
@@ -320,9 +318,7 @@ export default function Projects() {
         </svg>
 
         {/* CTA */}
-        <section
-          className="px-4 pt-2 pb-12 flex flex-col items-center gap-6 text-ocean-dark"
-        >
+        <section className="px-4 pt-2 pb-12 flex flex-col items-center gap-6 text-ocean-dark">
           <h2 className="text-2xl font-bold text-center">
             Want to see your project here?
           </h2>

@@ -1,4 +1,4 @@
-import "../index.css"
+import "../index.css";
 
 import Hero from "../components/HomePage/Hero";
 import Events from "../components/HomePage/Events";

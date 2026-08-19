@@ -55,13 +55,13 @@ const answers = [
   </p>,
 ];
 
-export default function FAQ(){
-    return (
-        <div className="z-30 max-w-250 space-y-8">
-            <h3 className="text-2xl font-bold text-center">
-              Frequently Asked Questions
-            </h3>
-            <Accordion labels={questions} content={answers} />
-        </div>
-    )
+export default function FAQ() {
+  return (
+    <div className="z-30 max-w-250 space-y-8">
+      <h3 className="text-2xl font-bold text-center">
+        Frequently Asked Questions
+      </h3>
+      <Accordion labels={questions} content={answers} />
+    </div>
+  );
 }

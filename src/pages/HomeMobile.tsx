@@ -1,8 +1,8 @@
-import "../index.css"
+import "../index.css";
 
 import Hero from "../components/HomePage/Hero";
 import Events from "../components/HomePage/Events";
-import WebApply from "../components/HomePage/WebApply";
+import WebApply from "../components/HomePage/ProductApply";
 import Join from "../components/HomePage/Join";
 import FAQ from "../components/HomePage/FAQ";
 import Contact from "../components/HomePage/Contact";
