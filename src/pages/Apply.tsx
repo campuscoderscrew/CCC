@@ -3,6 +3,7 @@ import ContactFooter from "../components/ContactFooter";
 import { Waves1, Waves2 } from "../components/Icons";
 import Join from "../components/RequestsPage/Join";
 import MembershipInformation from "../components/ApplyPage/MembershipInformation";
+import DepartmentApplications from "../components/ApplyPage/DepartmentApplications";
 
 export default function Apply() {
   return (
@@ -11,7 +12,7 @@ export default function Apply() {
       <div className="h-14" />
 
       {/* Slotted between the "Want to Join?" heading and the blurb below it */}
-      <Join>
+      <Join applications={<DepartmentApplications />}>
         <MembershipInformation />
       </Join>
 
