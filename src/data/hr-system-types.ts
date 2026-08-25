@@ -101,7 +101,7 @@ export interface Profiency {
 export function proficiencyToString(proficiency: Profiency): string {
   const { frontEnd, backEnd, design, versionControl, devOps, totalSum } =
     proficiency;
-  const ratings = [frontEnd, backEnd, design, versionControl, devOps, totalSum];
+  //const ratings = [frontEnd, backEnd, design, versionControl, devOps, totalSum];
   return (
     frontEnd +
     "-" +
