@@ -1,4 +1,5 @@
-export const meetingData = [
+import type { MeetingData } from "./types";
+export const meetingData: MeetingData[] = [
   {
     day: "Sundays",
     time: "9:30 PM - 10:00 PM",

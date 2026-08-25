@@ -17,6 +17,7 @@ import Meetings from "./pages/Meetings";
 import Projects from "./pages/Projects";
 import Requests from "./pages/Requests";
 import Apply from "./pages/Apply";
+import Members from "./pages/Members";
 import NotFound from "./pages/NotFound";
 
 export default function App() {
@@ -31,6 +32,7 @@ export default function App() {
         <Route path="projects" element={<Projects />} />
         <Route path="requests" element={<Requests />} />
         <Route path="apply" element={<Apply />} />
+        <Route path="members" element={<Members />} />
         {/* Catch-all. Must stay last. */}
         <Route path="*" element={<NotFound />} />
       </Routes>
