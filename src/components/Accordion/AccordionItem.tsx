@@ -10,10 +10,16 @@ type Props = {
   id: number;
   isOpen: boolean;
   handleToggle: (id: number) => void;
+
+  /**
+   * Tightens the toggle row so a single-item accordion reads as a compact
+   * disclosure box rather than a full FAQ list.
+   */
+  compact?: boolean;
 };
 
 export default function AccordionItem(props: Props) {
-  const { title, children, id, isOpen, handleToggle } = props;
+  const { title, children, id, isOpen, handleToggle, compact = false } = props;
 
   // For precise accordion opening
   const [panelHeight, setPanelHeight] = useState<number>(0);
@@ -34,15 +40,24 @@ export default function AccordionItem(props: Props) {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // The panel's left margin must equal the button's left padding plus the ship
+  // wheel's width plus the gutter between them, so the body lines up with the
+  // label above it.
+  // Default: p-4 (16) + size-10 (40) + gap-4 (16) = 72px = ml-18
+  // Compact:  px-2 (8) + size-8  (32) + gap-3 (12) = 52px = ml-13
+  const buttonSpacing = compact ? "px-2 py-3 gap-3" : "p-4 gap-4";
+  const wheelSize = compact ? "size-8" : "size-10";
+  const panelSpacing = compact ? "ml-13 -mt-3 mb-3" : "ml-18 -mt-4 mb-4";
+
   return (
     <div className="flex flex-col justify-items-stretch text-ocean-dark">
       {/* Panel toggle */}
       <button
         onClick={() => handleToggle(id)}
-        className="group p-4 flex gap-4 items-center cursor-pointer"
+        className={`group flex items-center cursor-pointer ${buttonSpacing}`}
       >
         <div
-          className={`size-10 shrink-0 grid transition duration-1000 ease-in-out
+          className={`${wheelSize} shrink-0 grid transition duration-1000 ease-in-out
             ${isOpen ? "rotate-180" : "rotate-0"}`}
         >
           <img className="place-self-center" src={shipWheel} />
@@ -54,11 +69,8 @@ export default function AccordionItem(props: Props) {
       <div
         ref={panelRef}
         style={panelRef.current ? panelMaxHeight : {}}
-        // `ml-18` is the combined width of `p-4` of the `button`, `size-10` of
-        // the ship wheel, and `gap-4` of the gutter between the ship wheel and
-        // the accordion label
-        className={`ml-18 -mt-4 mb-4 bg-white overflow-hidden 
-          transition-all ease-in-out 
+        className={`bg-white overflow-hidden transition-all ease-in-out
+          ${panelSpacing}
           ${isOpen ? "duration-500" : "duration-300"}`}
       >
         <div className="">{children}</div>

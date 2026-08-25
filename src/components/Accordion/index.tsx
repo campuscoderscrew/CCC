@@ -5,6 +5,12 @@ type Props = {
   className?: string;
   labels: string[];
   content: ReactNode[];
+
+  /**
+   * Tightens the card padding and toggle rows. Intended for a single-item
+   * accordion used as a compact disclosure box.
+   */
+  compact?: boolean;
 };
 
 /**
@@ -15,7 +21,7 @@ type Props = {
  * `content` as their body
  */
 export default function Accordion(props: Props) {
-  const { labels, content } = props;
+  const { labels, content, compact = false } = props;
 
   // Stores the ID of the open item. If -1, all are closed.
   const [openId, setOpenId] = useState<number>(-1);
@@ -29,10 +35,14 @@ export default function Accordion(props: Props) {
     setOpenId(openId === id ? -1 : id);
   };
 
+  const cardPadding = compact
+    ? "px-4 md:px-6 py-3"
+    : "px-4 md:px-8 lg:px-16 py-8";
+
   return (
     <div
-      className="min-w-full px-4 md:px-8 lg:px-16 py-8 flex flex-col bg-white 
-      rounded-xl shadow-lg divide-y *:border-black/20"
+      className={`min-w-full flex flex-col bg-white
+      rounded-xl shadow-lg divide-y *:border-black/20 ${cardPadding}`}
     >
       {labels.map((title: string, i: number) => (
         <AccordionItem
@@ -42,6 +52,7 @@ export default function Accordion(props: Props) {
           children={content[i]}
           isOpen={openId === i}
           handleToggle={handleToggle}
+          compact={compact}
         />
       ))}
     </div>

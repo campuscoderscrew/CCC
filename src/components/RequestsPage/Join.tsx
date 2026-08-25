@@ -1,17 +1,30 @@
+import type { ReactNode } from "react";
+
 import FAQ from "./FAQ";
 
-export default function Join() {
+type Props = {
+  /** Optional content slotted between the "Want to Join?" heading and the
+   * blurb that introduces the interest forms. */
+  children?: ReactNode;
+};
+
+export default function Join(props: Props) {
+  const { children } = props;
+
   return (
     <div
-      className="-mt-48 pt-48 -mb-[20%] 
+      className="-mt-48 pt-48 -mb-[20%]
           bg-linear-to-b from-white to-[#BAEBF8] to-70%"
     >
       <div
-        className="mx-8 mt-16 
+        className="mx-8 mt-16
             flex flex-col items-center gap-16 text-ocean-dark"
       >
         <div className="flex flex-col gap-4 text-center">
           <h2 className="text-4xl font-bold">Want to Join?</h2>
+
+          {children}
+
           <p className="max-w-200 self-center text-base text-pretty">
             If you're interested in becoming part of <b>Campus Coders Crew</b>,
             please fill out one of the forms below!
@@ -19,7 +32,7 @@ export default function Join() {
 
           <div
             className="flex max-xs:flex-col justify-center gap-4 xs:gap-8
-                *:px-12 *:py-4 *:bg-ocean-light *:rounded-lg 
+                *:px-12 *:py-4 *:bg-ocean-light *:rounded-lg
                 *:text-sand-light *:font-bold
                 *:transition *:duration-300 *:hover:bg-transparent
                 *:hover:outline-2 *:hover:text-ocean-light"

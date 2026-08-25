@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
 import logo from "@assets/logo.png";
 
@@ -7,14 +7,23 @@ const navLinks = [
   { label: "Home", to: "/home" },
   { label: "Requests", to: "/requests" },
   { label: "Apply", to: "/apply" },
+  { label: "Members", to: "/members" },
   { label: "Meetings", to: "/meetings" },
   // { label: "Crew", to: "/crew" },
   // { label: "Projects", to: "/projects" },
 ];
 
+/** Routes that paint their own dark background, so the navbar inverts to white. */
+const DARK_ROUTES = ["/members"];
+
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const { pathname } = useLocation();
+  const onDark = DARK_ROUTES.includes(
+    pathname.toLowerCase().replace(/\/+$/, "") || "/"
+  );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,7 +39,13 @@ export default function Navbar() {
   }, []);
 
   const linkClass =
-    "font-bold no-underline px-4 py-4 text-[hsl(204,98%,15%)] hover:bg-[hsl(195,80%,90%)] transition-colors";
+    "font-bold no-underline px-4 py-4 transition-colors " +
+    (onDark
+      ? "text-white hover:bg-white/15"
+      : "text-[hsl(204,98%,15%)] hover:bg-[hsl(195,80%,90%)]");
+
+  // On a dark page the translucent white scroll bar would swallow white text.
+  const barSolid = scrolled && !onDark;
 
   const activeLinkClass = ({ isActive }: { isActive: boolean }) =>
     `${linkClass} ${isActive ? "underline underline-offset-4" : ""}`;
@@ -41,9 +56,9 @@ export default function Navbar() {
       <div
         className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center py-4 px-4 min-[600px]:px-8 transition-colors duration-300"
         style={{
-          backgroundColor: scrolled ? "hsla(0, 0%, 100%, 0.85)" : "transparent",
-          backdropFilter: scrolled ? "blur(8px)" : "none",
-          borderBottom: scrolled
+          backgroundColor: barSolid ? "hsla(0, 0%, 100%, 0.85)" : "transparent",
+          backdropFilter: barSolid ? "blur(8px)" : "none",
+          borderBottom: barSolid
             ? "hsl(195, 80%, 90%) solid 1px"
             : "1px solid transparent",
         }}
@@ -51,7 +66,9 @@ export default function Navbar() {
         {/* Logo + name */}
         <Link
           to="/"
-          className="flex items-center gap-1 font-bold no-underline text-[hsl(204,98%,15%)]"
+          className={`flex items-center gap-1 font-bold no-underline ${
+            onDark ? "text-white" : "text-[hsl(204,98%,15%)]"
+          }`}
         >
           <span className="relative inline-flex items-center justify-center">
             <span
@@ -73,7 +90,9 @@ export default function Navbar() {
         {/* Hamburger */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="min-[600px]:hidden bg-transparent border-none cursor-pointer text-[hsl(204,98%,15%)]"
+          className={`min-[600px]:hidden bg-transparent border-none cursor-pointer ${
+            onDark ? "text-white" : "text-[hsl(204,98%,15%)]"
+          }`}
           aria-label={menuOpen ? "Close menu" : "Open menu"}
           aria-expanded={menuOpen}
         >
@@ -132,10 +151,16 @@ export default function Navbar() {
           className="fixed left-0 right-0 z-50 flex justify-between min-[600px]:hidden px-4"
           style={{
             top: "3.5rem",
-            backgroundColor: "hsla(190, 85%, 80%, 0.7)",
+            backgroundColor: onDark
+              ? "hsla(204, 98%, 15%, 0.9)"
+              : "hsla(190, 85%, 80%, 0.7)",
             backdropFilter: "blur(8px)",
-            borderTop: "hsl(190, 85%, 80%) solid 1px",
-            borderBottom: "hsl(190, 85%, 80%) solid 1px",
+            borderTop: onDark
+              ? "hsla(0, 0%, 100%, 0.25) solid 1px"
+              : "hsl(190, 85%, 80%) solid 1px",
+            borderBottom: onDark
+              ? "hsla(0, 0%, 100%, 0.25) solid 1px"
+              : "hsl(190, 85%, 80%) solid 1px",
           }}
         >
           {navLinks.map(({ label, to }) => (
