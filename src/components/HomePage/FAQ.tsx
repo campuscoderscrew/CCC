@@ -4,24 +4,17 @@ import Accordion from "../Accordion";
 export default function FAQ() {
   const questions = [
     "Who can join?",
-    "What skill level do I need?",
     "How are development teams formed?",
-    "Can I choose a team?",
+    "Can I choose a development team?",
     "What are the chances of being accepted?",
     "Is there a time commitment expected?",
   ];
 
   const answers = [
     <p>
-      Anyone can join! In addition to our development team, we also have
-      Committees that allow members to gain experience with non-technical
-      components that facilitate club functions. These committees include
-      Marketing, Logistics, Human Resources, Quality Assurance, and more!
-    </p>,
-    <p>
-      Anyone can join! In addition to our development team, we also have
-      Committees that allow members to gain experience with non-technical
-      components that facilitate club functions. These committees include
+      Anyone can join! In addition to our Development department, we also have
+      departments that allow members to gain experience with non-development
+      components that facilitate club functions. These departments include
       Marketing, Logistics, Human Resources, Quality Assurance, and more!
     </p>,
     <p>
@@ -31,23 +24,19 @@ export default function FAQ() {
       has the appropriate pace.
     </p>,
     <p>
-      To ensure members are spread evenly across our teams, members cannot
-      determine what team they are assigned to. However, if certain members wish
-      to be on the same team, we will try to accommodate as much as possible.
-      Additionally, while members cannot change their primary team, they can
-      temporarily join multiple teams at once. For temporary assignments,
-      members can choose where they are assigned to.
+      To ensure members are spread evenly across our development teams, members
+      cannot determine what team they are assigned to. However, if certain
+      members wish to be on the same team, we will try to accommodate as much as
+      possible. Additionally, while members cannot change their primary team,
+      they can temporarily join multiple teams at once. For temporary
+      assignments, members can choose where they are assigned to.
     </p>,
     <p>
-      CCC is non-selective, meaning that everyone is accepted into our club.
-      While Committees and Development Pods are non-selective, Development Teams
-      screen members to ensure they have the appropriate skill level. However,
-      we do not have a cap on our amount of developers, and we will accept all
-      qualified candidates into Development Teams.
+      CCC is non-selective, meaning that everyone is accepted into our club!
     </p>,
     <p>
       We do not have a defined time commitment across the board; however,
-      members should set down expectations with their Team Lead/Committee Heads.
+      members should set down expectations with their Team Lead/Department Head.
       Members are expected to notify Human Resources when they need to take a
       break from the club or will be unavailable for certain times. Members are
       also expected to respond to communication within 72 hours. Some members

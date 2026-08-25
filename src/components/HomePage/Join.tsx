@@ -23,7 +23,7 @@ export default function Join() {
               *:transition *:duration-300 *:hover:bg-transparent
               *:hover:outline-2 *:hover:text-ocean-light"
           >
-            <a href="https://go.umd.edu/ccc-developer-interest">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfrX09hIxXqnUN2AyDaZUBjm1eXCIGRdzYYHEU0FmUBFsngSQ/viewform?usp=publish-editor">
               Join a Dev Team
             </a>
             <a href="https://go.umd.edu/ccc-committees-interest">

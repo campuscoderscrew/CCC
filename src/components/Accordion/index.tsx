@@ -11,6 +11,13 @@ type Props = {
    * accordion used as a compact disclosure box.
    */
   compact?: boolean;
+
+  /**
+   * Index of the panel to open on mount. Defaults to -1, i.e. all closed.
+   * A value outside the range of `labels` also leaves every panel closed, so
+   * a lookup that finds nothing can be passed straight through.
+   */
+  defaultOpenId?: number;
 };
 
 /**
@@ -21,10 +28,10 @@ type Props = {
  * `content` as their body
  */
 export default function Accordion(props: Props) {
-  const { labels, content, compact = false } = props;
+  const { labels, content, compact = false, defaultOpenId = -1 } = props;
 
   // Stores the ID of the open item. If -1, all are closed.
-  const [openId, setOpenId] = useState<number>(-1);
+  const [openId, setOpenId] = useState<number>(defaultOpenId);
 
   /**
    * Opens an accordion panel for the corresponding `id`. If the panel is

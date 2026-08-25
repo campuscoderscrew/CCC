@@ -6,10 +6,13 @@ type Props = {
   /** Optional content slotted between the "Want to Join?" heading and the
    * blurb that introduces the interest forms. */
   children?: ReactNode;
+
+  /** Optional content slotted between the interest forms and the FAQ. */
+  applications?: ReactNode;
 };
 
 export default function Join(props: Props) {
-  const { children } = props;
+  const { children, applications } = props;
 
   return (
     <div
@@ -23,28 +26,15 @@ export default function Join(props: Props) {
         <div className="flex flex-col gap-4 text-center">
           <h2 className="text-4xl font-bold">Want to Join?</h2>
 
-          {children}
-
           <p className="max-w-200 self-center text-base text-pretty">
             If you're interested in becoming part of <b>Campus Coders Crew</b>,
             please fill out one of the forms below!
           </p>
 
-          <div
-            className="flex max-xs:flex-col justify-center gap-4 xs:gap-8
-                *:px-12 *:py-4 *:bg-ocean-light *:rounded-lg
-                *:text-sand-light *:font-bold
-                *:transition *:duration-300 *:hover:bg-transparent
-                *:hover:outline-2 *:hover:text-ocean-light"
-          >
-            <a href="https://go.umd.edu/ccc-developer-interest">
-              Join a Dev Team
-            </a>
-            <a href="https://go.umd.edu/ccc-committees-interest">
-              Join a Committee
-            </a>
-          </div>
+          {children}
         </div>
+
+        {applications}
 
         <FAQ />
       </div>
