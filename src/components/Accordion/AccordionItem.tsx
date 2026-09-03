@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useLayoutEffect } from "react";
 
 import shipWheel from "@assets/ship-wheel.png";
 
@@ -26,7 +26,9 @@ export default function AccordionItem(props: Props) {
   const panelRef = useRef<HTMLDivElement>(null);
   const panelMaxHeight = { maxHeight: isOpen ? panelHeight : 0 };
 
-  useEffect(() => {
+  // Must run before paint: until the panel is measured there is no max-height
+  // to clamp it, so a plain effect lets every panel flash open on first load.
+  useLayoutEffect(() => {
     /**
      * Determines the max height of the accordion body
      */
