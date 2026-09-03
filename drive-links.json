@@ -6,7 +6,7 @@
     "internal-logs": {
       "analytics-logs": "https://docs.google.com/spreadsheets/d/1UnaAUeOrI88sPLkdHYfUdv3EgRKXdO746nantjgSg1I/edit?gid=1806298496#gid=1806298496",
       "finance-logs": "https://docs.google.com/spreadsheets/d/1UnaAUeOrI88sPLkdHYfUdv3EgRKXdO746nantjgSg1I/edit?gid=464748067#gid=464748067",
-      "hr-logs": "https://docs.google.com/spreadsheets/d/1Una AUeOrI88sPLkdHYfUdv3EgRKXdO746nantjgSg1I/edit?gid=674592316#gid=674592316",
+      "hr-logs": "https://docs.google.com/spreadsheets/d/1UnaAUeOrI88sPLkdHYfUdv3EgRKXdO746nantjgSg1I/edit?gid=674592316#gid=674592316",
       "rm-logs": "https://docs.google.com/spreadsheets/d/1UnaAUeOrI88sPLkdHYfUdv3EgRKXdO746nantjgSg1I/edit?gid=1462416090#gid=1462416090",
       "eboard-logs": "https://docs.google.com/spreadsheets/d/1UnaAUeOrI88sPLkdHYfUdv3EgRKXdO746nantjgSg1I/edit?gid=87659134#gid=87659134"
     },
@@ -21,6 +21,21 @@
       "qa-logs": "https://docs.google.com/spreadsheets/d/1h7oqxszmWEuqIoRjimYkhf_6skzuRDAf2xIieGLwhzc/edit?gid=276070620#gid=276070620",
       "product-logs": "https://docs.google.com/spreadsheets/d/1h7oqxszmWEuqIoRjimYkhf_6skzuRDAf2xIieGLwhzc/edit?gid=627401847#gid=627401847",
       "dev-logs": "https://docs.google.com/spreadsheets/d/1h7oqxszmWEuqIoRjimYkhf_6skzuRDAf2xIieGLwhzc/edit?gid=833727648#gid=833727648"
+    },
+    {
+      "development-team-logs": {
+        "zebra-logs": "https://docs.google.com/spreadsheets/d/1U0E0pJvZlwv6fXohMfq_yWEojLph2R_8uT7GP8Mp3ZU/edit?gid=1121514995#gid=1121514995",
+        "hammerhead-logs": "https://docs.google.com/spreadsheets/d/1U0E0pJvZlwv6fXohMfq_yWEojLph2R_8uT7GP8Mp3ZU/edit?gid=1003730958#gid=1003730958",
+        "lemon-logs": "https://docs.google.com/spreadsheets/d/1U0E0pJvZlwv6fXohMfq_yWEojLph2R_8uT7GP8Mp3ZU/edit?gid=1758097388#gid=1758097388",
+        "tiger-logs": "https://docs.google.com/spreadsheets/d/1U0E0pJvZlwv6fXohMfq_yWEojLph2R_8uT7GP8Mp3ZU/edit?gid=1814475151#gid=1814475151",
+        "cookiecutter-logs": "https://docs.google.com/spreadsheets/d/1U0E0pJvZlwv6fXohMfq_yWEojLph2R_8uT7GP8Mp3ZU/edit?gid=2014671904#gid=2014671904",
+        "shortfin-logs": "https://docs.google.com/spreadsheets/d/1U0E0pJvZlwv6fXohMfq_yWEojLph2R_8uT7GP8Mp3ZU/edit?gid=2078867281#gid=2078867281",
+        "blue-logs": "https://docs.google.com/spreadsheets/d/1U0E0pJvZlwv6fXohMfq_yWEojLph2R_8uT7GP8Mp3ZU/edit?gid=1042117028#gid=1042117028",
+        "whale-logs": "https://docs.google.com/spreadsheets/d/1U0E0pJvZlwv6fXohMfq_yWEojLph2R_8uT7GP8Mp3ZU/edit?gid=674592316#gid=674592316",
+        "leopard-logs": "https://docs.google.com/spreadsheets/d/1U0E0pJvZlwv6fXohMfq_yWEojLph2R_8uT7GP8Mp3ZU/edit?gid=247429722#gid=247429722",
+        "angel-logs": "https://docs.google.com/spreadsheets/d/1U0E0pJvZlwv6fXohMfq_yWEojLph2R_8uT7GP8Mp3ZU/edit?gid=54963984#gid=54963984",
+        "silky-logs": "https://docs.google.com/spreadsheets/d/1U0E0pJvZlwv6fXohMfq_yWEojLph2R_8uT7GP8Mp3ZU/edit?gid=1153189387#gid=1153189387"
+      }
     }
   },
   "operations-folders": {
