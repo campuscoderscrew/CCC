@@ -42,6 +42,12 @@ export const applicationFormData: ApplicationData = {
               closed: false,
             },
             {
+              position: "Staff Developer",
+              positionDescription:
+                "Solo developer for a specific project or initiative. Functions as a one-person team",
+              closed: true,
+            },
+            {
               position: "Development Department Head",
               positionDescription: "Manages the Development department",
               closed: true,
